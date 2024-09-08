@@ -30,6 +30,7 @@ const Handle = () => {
                     } else if (data.status === 'success') {
                         console.log(data.userData);
                         setData(data.userData);
+                        setSocial(data.socials);
                         setUserFound(true);
                     }
                 })
@@ -38,6 +39,7 @@ const Handle = () => {
     }, [router.query]);
 
     // grab social links from database
+    /*
     useEffect(() => {
         if (router.query?.handle) {
             fetch(`http://localhost:5173/get/socials/${router.query.handle}`)
@@ -53,6 +55,7 @@ const Handle = () => {
                 .catch((err) => console.log(err));
         }
     }, [router.query])
+    */
 
     if (userFound) {
         return (

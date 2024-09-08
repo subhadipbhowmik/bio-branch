@@ -6,7 +6,8 @@ const port = 5173;
 require('dotenv').config();
 const { dashboardData } = require('./controllers/dashboard');
 const { registerUser, loginUser } = require('./controllers/auth');
-const { getUserData, getUserSocials } = require('./controllers/getuserdata');
+const { getUserData } = require('./controllers/getuserdata');
+const { saveSocials } = require('./controllers/saveSocials');
 
 // middlewares
 app.use(cors());
@@ -39,7 +40,9 @@ app.post('/data/dashboard', dashboardData);
 app.get('/get/:handle', getUserData)
 
 // users social links data
-app.get('/get/socials/:handle', getUserSocials)
+// app.get('/get/socials/:handle', getUserSocials)
+
+app.post('/save/socials', saveSocials)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);

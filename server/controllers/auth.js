@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const UserModel = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 const registerUser = async (req, res) => {
@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
             icon: ''
         };
 
-        const user = await User.create({
+        const user = await UserModel.create({
             handle, email, password, role: category, links: [defaultLink]
         });
     
@@ -41,7 +41,7 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = await User.findOne({ email: email, password: password });
+        const user = await UserModel.findOne({ email: email, password: password });
         if (!user) {
             return res.json({
                 status: 'notfound',

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import LinkBox from '@/components/LinkBox';
 import UserHeader from '@/components/UserHeader';
 import { toast } from 'react-toastify';
+import UserContext from '@/context/userContext';
 
 const Dashboard = () => {
     const [data, setData] = useState({});
+    const {setUserData} = useContext(UserContext);
 
     useEffect(() => {
         if (!localStorage.getItem('BioTreeToken')) {
@@ -28,9 +30,10 @@ const Dashboard = () => {
             if (data.status === 'error') {
                 return toast.error("Error happened");
             }
-            setData(data.userData || {});
+            setData(data.userData);
+            setUserData(data.userData);
             localStorage.setItem('userHandle', data.userData.handle);
-            toast.success(data.message);
+            // toast.success(data.message);
         })
         .catch((err) => console.log(err));
     }, []);
@@ -38,7 +41,7 @@ const Dashboard = () => {
     return (
         <>
             <div>
-                <UserHeader data={data} />
+                <UserHeader/>
                 <main>
                     <section className='grid md:grid-cols-2 xl:grid-cols-4 gap-4 p-8'>
                         <LinkBox 

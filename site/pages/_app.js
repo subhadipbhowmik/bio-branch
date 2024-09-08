@@ -8,10 +8,20 @@ import '../public/nprogress.css';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from 'next/script';
+import UserContext from "@/context/userContext";
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  // create a blank state object
+  const [userData, setUserData] = useState({
+    name: '',
+    role: '',
+    avatar: '',
+    handle: '',
+    bio: '',
+  });
 
   useEffect(() => {
     const handleStart = () => {
@@ -48,7 +58,9 @@ export default function App({ Component, pageProps }) {
                     });
                 `}
     </Script>
+    <UserContext.Provider value={{userData, setUserData}}>
     <Component {...pageProps} />
+    </UserContext.Provider>
     <ToastContainer />
     {isLoading && <div className="nprogress-custom-parent"><div className="nprogress-custom-bar"/></div>}
     <Footer/>

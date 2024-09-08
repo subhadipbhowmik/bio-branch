@@ -27,9 +27,11 @@ const getUserData = async (req, res) => {
             links: user.links
         };
 
+        const socials = user.socialMedia;
         return res.json({
             message: 'User found',
             userData,
+            socials,
             status: 'success'
         });
 
@@ -42,6 +44,7 @@ const getUserData = async (req, res) => {
     }
 }
 
+/*
 const getUserSocials = async(req, res)=>{
     const handle = req.params.handle;
     try {
@@ -59,5 +62,6 @@ const getUserSocials = async(req, res)=>{
         })
     }
 }
+*/
 
-module.exports = { getUserData, getUserSocials };
+module.exports = { getUserData };
