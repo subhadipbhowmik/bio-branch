@@ -3,10 +3,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-
 const { dashboardData } = require('./controllers/dashboard');
 const { registerUser, loginUser } = require('./controllers/auth');
-const { getUserData } = require('./controllers/getuserdata');
+const { getUserData } = require('./controllers/getUserData');
 const { saveSocials, saveProfile } = require('./controllers/saveSocials');
 const { loadSocials } = require('./controllers/loadSocials');
 const { loadLinks } = require('./controllers/loadLinks');
@@ -27,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Home Route
 app.get('/', (req, res) => {
-    res.send('register');
+    res.send('Bio Branch Is Running');
 });
 
 // Register route -> to create a new user
