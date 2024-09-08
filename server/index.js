@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
-const port = 5173;
 require('dotenv').config();
+
 const { dashboardData } = require('./controllers/dashboard');
 const { registerUser, loginUser } = require('./controllers/auth');
 const { getUserData } = require('./controllers/getuserdata');
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/biotree')
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB');
     })
@@ -52,6 +52,8 @@ app.post('/save/links/', saveLinks)
 app.post('/load/socials', loadSocials)
 app.post('/load/links', loadLinks)
 
+// Use the port from environment variables or default to 4000
+const port = process.env.PORT || 4000;
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Server is running at http://localhost:${port}`);
 });
