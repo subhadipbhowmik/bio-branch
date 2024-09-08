@@ -1,8 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
-import UserContext from '@/context/userContext'
+import React, { useContext, useEffect, useState } from 'react';
+import UserContext from '@/context/userContext';
 import UserHeader from '@/components/UserHeader';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 const Profile = () => {
+  const router = useRouter();
   const { userData, setUserData } = useContext(UserContext);
   const [social, setSocial] = useState({
     facebook: '',
@@ -21,8 +24,8 @@ const Profile = () => {
   const handleSocial = (e) => {
     setSocial({
       ...social,
-      [e.target.id]: e.target.value
-    })
+      [e.target.id]: e.target.value,
+    });
   };
 
   useEffect(() => {
@@ -33,9 +36,9 @@ const Profile = () => {
     }
   }, [userData]);
 
+  const saveSocials = (e) => {
+    e.preventDefault();
 
-
-  const saveSocials = () => {
     const options = {
       method: 'POST',
       headers: {
@@ -43,12 +46,86 @@ const Profile = () => {
       },
       body: JSON.stringify({
         tokenMail: localStorage.getItem('BioTreeToken'),
-        socials: social
+        socials: social,
       }),
-    }
+    };
+    fetch(`http://localhost:5173/save/socials/`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 'success') {
+          toast.success(data.message);
+        } else {
+          toast.error(data.error);
+        }
+      })
+      .catch((err) => {
+        console.error('Fetch error:', err);
+        toast.error('An error occurred while saving socials.');
+      });
+  };
+
+  // save profile data
+  const saveProfile = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5173/save/socials/${userData._id}`, options)
-  } 
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        tokenMail: localStorage.getItem('BioTreeToken'),
+        name: name,
+        bio: bio,
+        avatar: avatar
+      }),
+    };
+    fetch(`http://localhost:5173/save/profile/`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 'success') {
+          toast.success("Profile updated successfully");
+        } else {
+          toast.error(data.error);
+        }
+      })
+      .catch((err) => {
+        console.error('Fetch error:', err);
+        toast.error('An error occurred while saving socials.');
+      });
+  };
+
+
+  // load previous socials data from database
+  useEffect(() => {
+    if(!localStorage.getItem('BioTreeToken')) {
+      router.push('/login');
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        tokenMail: localStorage.getItem('BioTreeToken'),
+      }),
+    };
+
+    fetch(`http://localhost:5173/load/socials`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status === 'success') {
+          setSocial(data.socials);
+        } else {
+          toast.error(data.error);
+        }
+      })
+      .catch((err) => {
+        console.error('Fetch error:', err);
+        toast.error('An error occurred while loading socials.');
+      });
+  }, []);
 
   return (
     <>
@@ -56,10 +133,10 @@ const Profile = () => {
         <UserHeader />
         <main>
           <section>
-            <div className=''>
+            <div>
               <h4 className='text-center my-3 font-bold'>Edit Profile</h4>
               <div>
-                <form className='flex flex-col items-center'>
+                <form onSubmit={saveProfile} className='flex flex-col items-center'>
                   <span className='flex w-11/12 m-auto items-center mb-3 shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
                     <img className='w-6 mr-2' src="/svg/icons/user.svg" alt="" />
                     <input
@@ -94,17 +171,18 @@ const Profile = () => {
                     <img className='w-10 ml-20' src={avatar} alt="" />
                   </span>
 
-                  <input type="button" value="Save Profile" className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 cursor-pointer w-32 mb-4" />
-
+                  <input type="submit" value="Save Profile" className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 cursor-pointer w-32 mb-4" onClick={() => {
+                    // Add save profile functionality if needed
+                  }} />
                 </form>
               </div>
             </div>
 
             {/* Social handle edits  */}
-            <div className=''>
+            <div>
               <h4 className='text-center my-3 font-bold'>Edit Social Handle</h4>
               <div>
-                <form className='flex flex-col items-center'>
+                <form onSubmit={saveSocials} className='flex flex-col items-center'>
                   <span className='flex w-11/12 m-auto items-center mb-3 shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
                     <img className='w-6 mr-2' src="/svg/icons/ig.svg" alt="Instagram" />
                     <input
@@ -177,8 +255,7 @@ const Profile = () => {
                     />
                   </span>
 
-                  <input type="button" value="Save Profile" className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 cursor-pointer w-32 mb-4" />
-
+                  <input type="submit" value="Save Socials" className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 cursor-pointer w-32 mb-4" />
                 </form>
               </div>
             </div>
@@ -186,7 +263,7 @@ const Profile = () => {
         </main>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

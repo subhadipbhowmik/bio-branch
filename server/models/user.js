@@ -3,10 +3,12 @@ const { model, Schema } = mongoose;
 
 const UserSchema = new Schema({
     name: {
-        type: String
+        type: String,
+        default: 'BioBranch User'
     },
     bio: {
-        type: String
+        type: String,
+        default: 'Edit Me'
     },
     email: {
         type: String,
@@ -40,7 +42,6 @@ const UserSchema = new Schema({
         },
         icon: {
             type: String,
-            default: 'https://i.ibb.co/Ph0WZLq/panda-bear.png'
         }
     }],
     socialMedia: {

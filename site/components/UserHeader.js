@@ -6,15 +6,13 @@ import UserContext from '@/context/userContext';
 const UserHeader = () => {
     // const { role, handle, avatar, links } = data;
     const route = useRouter();
-    const handleLink = route.query.handle;
+    const {userData, setUserData} = useContext(UserContext);
+    const { role, avatar, handle} = userData;
 
     const handleLogout = () => {
         localStorage.removeItem('BioTreeToken');
         route.push('/login');
     };
-
-    const {userData, setUserData} = useContext(UserContext);
-    const { role, handle, avatar} = userData;
 
     useEffect(() => {
         if (!localStorage.getItem('BioTreeToken')) {
@@ -38,7 +36,6 @@ const UserHeader = () => {
             if (data.status === 'error') {
                 return toast.error("Error happened");
             }
-            setData(data.userData);
             setUserData(data.userData);
             localStorage.setItem('userHandle', data.userData.handle);
             // toast.success(data.message);
@@ -62,7 +59,7 @@ const UserHeader = () => {
                 </button>
                 </Link>
             </div>
-            <Link href={`/${handle}`}>
+            <Link href={`http://localhost:3000/${handle}`}>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
                 <div className='flex items-center bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200'>
                     <div className="text-xs md:text-sm flex flex-col">
@@ -70,7 +67,7 @@ const UserHeader = () => {
                         <span className='text-gray-600'>{role} Pack</span>
                     </div>
                     <div className="ml-3">
-                        <img src={avatar} alt="" className='w-10 h-10 rounded-full border border-gray-300' />
+                        <img src={avatar} alt="" className='w-10 h-10 rounded-full border-2 border-gray-300' />
                     </div>
                 </div>
                 <img src="/svg/notification.svg" alt="" className='w-6 h-6 cursor-pointer hover:text-gray-700' />
