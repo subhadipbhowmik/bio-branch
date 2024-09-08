@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 
 const Login = () => {
   const route = useRouter();
-  const [email, setEmail] = useState('shubhi@gmail.com');
-  const [password, setPassword] = useState('721629');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
