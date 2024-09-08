@@ -59,7 +59,7 @@ const UserHeader = () => {
                 </button>
                 </Link>
             </div>
-            <Link href={`http://localhost:3000/${handle}`}>
+            <Link href={`https://biobranch.vercel.app/${handle}`}>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
                 <div className='flex items-center bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200'>
                     <div className="text-xs md:text-sm flex flex-col">
