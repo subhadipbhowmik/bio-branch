@@ -21,7 +21,7 @@ const Handle = () => {
 
     useEffect(() => {
         if (router.query?.handle) {
-            fetch(`http://localhost:5173/get/${router.query.handle}`)
+            fetch(`https://bio-branch-server.onrender.com/get/${router.query.handle}`)
                 .then((res) => res.json())
                 .then((data) => {
                     if (data.status === 'error') {

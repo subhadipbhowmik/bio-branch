@@ -39,7 +39,7 @@ const Links = () => {
       }),
     };
 
-    fetch(`http://localhost:5173/save/links`, options)
+    fetch(`https://bio-branch-server.onrender.com/save/links`, options)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {
@@ -70,7 +70,7 @@ const Links = () => {
       }),
     };
 
-    fetch(`http://localhost:5173/load/links`, options)
+    fetch(`https://bio-branch-server.onrender.com/load/links`, options)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {

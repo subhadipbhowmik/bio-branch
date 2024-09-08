@@ -29,7 +29,7 @@ const UserHeader = () => {
             }),
         };
 
-        fetch('http://localhost:5173/data/dashboard', options)
+        fetch('https://bio-branch-server.onrender.com/data/dashboard', options)
         .then((res) => res.json())
         .then((data) => {
             console.log(data); 

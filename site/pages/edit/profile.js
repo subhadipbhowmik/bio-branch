@@ -49,7 +49,7 @@ const Profile = () => {
         socials: social,
       }),
     };
-    fetch(`http://localhost:5173/save/socials/`, options)
+    fetch(`https://bio-branch-server.onrender.com/save/socials/`, options)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 'success') {
@@ -80,7 +80,7 @@ const Profile = () => {
         avatar: avatar
       }),
     };
-    fetch(`http://localhost:5173/save/profile/`, options)
+    fetch(`https://bio-branch-server.onrender.com/save/profile/`, options)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 'success') {
@@ -112,7 +112,7 @@ const Profile = () => {
       }),
     };
 
-    fetch(`http://localhost:5173/load/socials`, options)
+    fetch(`https://bio-branch-server.onrender.com/load/socials`, options)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 'success') {

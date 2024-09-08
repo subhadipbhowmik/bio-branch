@@ -33,7 +33,7 @@ const Apply = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5173/api/register', options);
+      const response = await fetch('https://bio-branch-server.onrender.com/api/register', options);
       const data = await response.json();
 
       if (data.status === 'success') {

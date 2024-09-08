@@ -21,7 +21,7 @@ const Login = () => {
     }
 
     // backend implementations
-    fetch('http://localhost:5173/api/login', options)
+    fetch('https://bio-branch-server.onrender.com/api/login', options)
     .then(response => response.json())
     .then(data => {
       if(data.status === 'success'){
