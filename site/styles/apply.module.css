@@ -1,6 +1,6 @@
 .background {
     position: relative;
-    background-image: url('/images/background-desktop.jpg');
+    background-image: url('/images/earth.jpg');
 }
 
 .background::after {
@@ -15,6 +15,6 @@
 
 @media screen and (max-width: 768px) {
     .background {
-        background-image: url('/images/background-mobile.jpg');
+        background-image: url('/images/earth.jpg');
     }
 }
