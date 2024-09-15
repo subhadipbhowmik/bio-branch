@@ -9,7 +9,7 @@ const registerUser = async (req, res) => {
         const defaultLink = {
             url: 'https://shubhadipbhowmik.vercel.app/',
             title: 'Shubhadip',
-            icon: ''
+            icon: 'https://i.ibb.co/Xy5kkZM/link.png'
         };
 
         const user = await UserModel.create({
