@@ -51,20 +51,20 @@ const Dashboard = () => {
                             lbTheme="red"
                         />
                         <LinkBox 
-                            lbTitle="Total Sales"
+                            lbTitle="Total Clicks"
                             lbNumber="30%"
                             lbSvg="growth"
                             lbTheme="yellow"
                         />
                         <LinkBox 
-                            lbTitle="Total Sales"
-                            lbNumber="1500"
+                            lbTitle="Total Shares"
+                            lbNumber="39"
                             lbSvg="share"
                             lbTheme="green"
                         />
                         <LinkBox 
-                            lbTitle="Total Sales"
-                            lbNumber="1500"
+                            lbTitle="Total Retention"
+                            lbNumber="50%"
                             lbSvg="url"
                             lbTheme="green"
                         />
