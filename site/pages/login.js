@@ -48,7 +48,10 @@ const Login = () => {
                 <img className='w-6 mr-2' src="/svg/email.svg" alt="" />
                 <input className='px-3 rounded-md focus:outline-none' placeholder='Add Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
               </span>
-              <input className='shadow-md border-2 px-3 py-2 rounded-md focus:outline-none' placeholder='Add Password' type="password" required  value={password} onChange={(e) => setPassword(e.target.value)}/>
+              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
+                <img className='w-7 mr-2' src="/svg/password.png" alt="" />
+                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+              </span>
 
               <input type='submit' value='Login' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
             </form>
