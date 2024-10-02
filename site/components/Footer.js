@@ -31,6 +31,8 @@ const Footer = () => {
           </div>
         </div>
 
+/*Feature Contact us*/
+
         {/* Right Section: Social Media Links */}
         <div className="flex space-x-4">
           <Link href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter" className="hover:text-blue-400 transition">
