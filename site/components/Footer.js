@@ -31,7 +31,25 @@ const Footer = () => {
           </div>
         </div>
 
-/*Feature Contact us*/
+
+{/* Feature: Contact Us */}
+        <div className="flex flex-col items-start mb-6 md:mb-0">
+          <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+          <div className="flex flex-col space-y-2">
+            {/* Email Contact */}
+            <a href="mailto:contact@yourdomain.com" className="text-sm font-semibold hover:underline">
+              contact@yourdomain.com
+            </a>
+            {/* Phone Contact */}
+            <a href="tel:+123456789" className="text-sm font-semibold hover:underline">
+              +1 234 567 89
+            </a>
+            {/* Or a Contact Form Link */}
+            <Link href="/contact" className="text-sm font-semibold hover:underline">
+              Contact Form
+            </Link>
+          </div>
+        </div>
 
         {/* Right Section: Social Media Links */}
         <div className="flex space-x-4">
