@@ -3,10 +3,12 @@ import styles from '../styles/apply.module.css'
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Eye, EyeOff } from 'lucide-react';
 
 const Login = () => {
   const route = useRouter();
   const [email, setEmail] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
@@ -22,20 +24,20 @@ const Login = () => {
 
     // backend implementations
     fetch('https://bio-branch-server.onrender.com/api/login', options)
-    .then(response => response.json())
-    .then(data => {
-      if(data.status === 'success'){
-        toast.success("You are logged in successfully");
-        localStorage.setItem('BioTreeToken', data.token);
-        route.push('/dashboard');
-      }
-      if(data.status === 'notfound'){
-        toast.error("User not found");
-      }
-    })
-    .catch(error => toast.error("An error occurred. Please try again."));
-
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          toast.success("You are logged in successfully");
+          localStorage.setItem('BioTreeToken', data.token);
+          route.push('/dashboard');
+        }
+        if (data.status === 'notfound') {
+          toast.error("User not found");
+        }
+      })
+      .catch(error => toast.error("An error occurred. Please try again."));
   }
+
   return (
     <>
       <section className={styles.background + " min-h-screen flex justify-center items-center"}>
@@ -46,9 +48,25 @@ const Login = () => {
             <form onSubmit={handleLogin} className='flex flex-col gap-3 text-lg'>
               <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
                 <img className='w-6 mr-2' src="/svg/email.svg" alt="" />
-                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input className='rounded-md focus:outline-none' placeholder='Add Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </span>
-              <input className='shadow-md border-2 px-3 py-2 rounded-md focus:outline-none' placeholder='Add Password' type="password" required  value={password} onChange={(e) => setPassword(e.target.value)}/>
+              <span className='shadow-md border-2 px-3 py-2 rounded-md focus:outline-none flex items-center'>
+                {
+                  isPasswordVisible ? (
+                    <EyeOff onClick={() => setIsPasswordVisible(false)} className="cursor-pointer" />
+                  ) : (
+                    <Eye onClick={() => setIsPasswordVisible(true)} className="cursor-pointer" />
+                  )
+                }
+                <input 
+                  className="px-3 focus:ring-0 border-none focus:outline-none ml-2"
+                  placeholder='Add Password'
+                  type={isPasswordVisible ? "text" : "password"} 
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </span>
 
               <input type='submit' value='Login' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
             </form>
@@ -60,4 +78,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
