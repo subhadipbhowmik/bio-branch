@@ -55,9 +55,10 @@ img{
 }
 
 nav{
-  position:fixed;
+  position:fixed; /*making topnav bar fixed*/
   top:0;
   width:100%;
+  z-index: 1000; /* Make sure it stays above other elements */
 }
 
 /* @media (prefers-color-scheme: dark) {
