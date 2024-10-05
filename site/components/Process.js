@@ -46,6 +46,10 @@ const Process = () => {
               </div>
             </div>
 
+
+
+            
+
             {/* Step 2 */}
             <div className="flex flex-col items-center">
               <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-72 h-60 relative z-10 border border-gray-300">
