@@ -1,5 +1,5 @@
-const UserModel = require("../models/user");
-const jwt = require('jsonwebtoken');
+import UserModel from "../models/user.js";
+import jwt from 'jsonwebtoken';
 
 const saveSocials = async(req, res) => {
     const {tokenMail, socials} = req.body;
@@ -52,4 +52,4 @@ const saveProfile = async(req, res) => {
     }
 }
 
-module.exports = { saveSocials, saveProfile }
+export { saveSocials, saveProfile }

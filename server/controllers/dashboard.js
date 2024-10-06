@@ -1,5 +1,5 @@
-const UserModel = require('../models/user');
-const jwt = require('jsonwebtoken');
+import UserModel from '../models/user.js';
+import jwt from 'jsonwebtoken';
 
 const dashboardData = async (req, res) => {
     const { tokenMail } = req.body;
@@ -33,4 +33,4 @@ const dashboardData = async (req, res) => {
     }
 };
 
-module.exports = { dashboardData };
+export default dashboardData;
