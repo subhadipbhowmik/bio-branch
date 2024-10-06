@@ -14,7 +14,7 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/subhadipbhowmik/bio-branch?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/subhadipbhowmik/bio-branch?style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-prsubhadipbhowmik/bio-branch?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/subhadipbhowmik/bio-branch?style=for-the-badge)
 ![GitHub stars](https://img.shields.io/github/stars/subhadipbhowmik/bio-branch?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/subhadipbhowmik/bio-branch?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/subhadipbhowmik/bio-branch?style=for-the-badge)
