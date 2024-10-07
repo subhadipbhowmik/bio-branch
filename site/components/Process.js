@@ -36,7 +36,7 @@ const Process = () => {
             <div className="w-1/4 border-t-2 border-gray-300"></div>
           </div>
           {/* Process Steps */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {/* Step 1 */}
             <div className="flex flex-col items-center">
               <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border h-[100%] border-gray-300">
