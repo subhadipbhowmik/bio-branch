@@ -5,6 +5,7 @@ import { Apple, Play } from 'lucide-react';
 const Footer = () => {
   return (
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
+ 
       <div className="container mx-auto flex flex-col md:flex-row items-start justify-between space-y-8 md:space-y-0">
 
         {/* Left Section: Recent Articles, Contact Us, and Stay Updated */}
@@ -84,12 +85,14 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+ 
       </div>
 
       {/* Bottom Text */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center">
         <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
+ 
 
       {/* Quick Links Section */}
       <div className="mt-6 text-center">
@@ -100,6 +103,7 @@ const Footer = () => {
           <Link href="/faq" className="text-sm text-gray-400 hover:underline transition">FAQ</Link>
         </div>
       </div>
+ 
     </footer>
   );
 };
