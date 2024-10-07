@@ -50,6 +50,7 @@ const Apply = () => {
   };
 
   return (
+ 
     <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
       <div className="main w-full max-w-md p-6 bg-white border border-gray-300 rounded-lg shadow-lg">
         <h1 className='text-center font-bold text-3xl text-blue-600 mb-4'>Join the Top 1% Creators</h1>
@@ -104,6 +105,7 @@ const Apply = () => {
             className='bg-blue-600 text-white font-semibold rounded-md py-2 transition duration-200 hover:bg-blue-500 cursor-pointer'
           />
         </form>
+ 
 
         <h4 className='text-center pt-4 text-gray-600'>
           Already Have an Account? 
