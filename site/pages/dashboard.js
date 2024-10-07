@@ -40,7 +40,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div>
+            <div className="flex flex-col min-h-screen">
                 <UserHeader/>
                 <main>
                     <section className='grid md:grid-cols-2 xl:grid-cols-4 gap-4 p-8'>
