@@ -1,5 +1,5 @@
-const UserModel = require("../models/user");
-const jwt = require('jsonwebtoken');
+import UserModel from "../models/user.js";
+import jwt from 'jsonwebtoken';
 
 const loadSocials = async (req, res) => {
     const { tokenMail } = req.body;
@@ -24,4 +24,4 @@ const loadSocials = async (req, res) => {
     }
 }
 
-module.exports = { loadSocials }
+export default loadSocials

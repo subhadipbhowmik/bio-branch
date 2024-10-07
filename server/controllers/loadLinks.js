@@ -1,5 +1,5 @@
-const UserModel = require("../models/user");
-const jwt = require('jsonwebtoken');
+import UserModel from "../models/user.js";
+import jwt from 'jsonwebtoken';
 
 const loadLinks = async (req, res) => {
     try {
@@ -21,4 +21,4 @@ const loadLinks = async (req, res) => {
     }    
 }   
 
-module.exports = {loadLinks};
+export default loadLinks;

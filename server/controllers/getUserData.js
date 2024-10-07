@@ -1,4 +1,4 @@
-const UserModel = require("../models/user");
+import UserModel from "../models/user.js";
 
 const getUserData = async (req, res) => {
     const handle = req.params.handle;
@@ -64,4 +64,4 @@ const getUserSocials = async(req, res)=>{
 }
 */
 
-module.exports = { getUserData };
+export default getUserData;

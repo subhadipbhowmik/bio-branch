@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const UserModel = require("../models/user");
+import jwt from "jsonwebtoken";
+import UserModel from "../models/user.js";
 
 const saveLinks = async (req, res) => {
     const { tokenMail, links } = req.body;
@@ -27,4 +27,4 @@ const saveLinks = async (req, res) => {
     }
 };
 
-module.exports = { saveLinks };
+export default saveLinks;

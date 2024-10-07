@@ -1,8 +1,9 @@
 {
   "name": "server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "BioTree Server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },

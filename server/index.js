@@ -1,22 +1,22 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const app = express();
-require('dotenv').config();
-const { dashboardData } = require('./controllers/dashboard');
-const { registerUser, loginUser } = require('./controllers/auth');
-const { getUserData } = require('./controllers/getUserData');
-const { saveSocials, saveProfile } = require('./controllers/saveSocials');
-const { loadSocials } = require('./controllers/loadSocials');
-const { loadLinks } = require('./controllers/loadLinks');
-const { saveLinks } = require('./controllers/saveLinks');
+import express, { json } from 'express';
+import { connect } from 'mongoose';
+import cors from 'cors';
+import 'dotenv/config'
+import dashboardData from './controllers/dashboard.js';
+import { registerUser, loginUser } from './controllers/auth.js';
+import getUserData from './controllers/getUserData.js';
+import { saveSocials, saveProfile } from './controllers/saveSocials.js';
+import loadSocials from './controllers/loadSocials.js';
+import loadLinks from './controllers/loadLinks.js';
+import saveLinks from './controllers/saveLinks.js';
 
+const app = express();
 // middlewares
 app.use(cors());
-app.use(express.json());
+app.use(json()); 
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+await connect(process.env.MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB');
     })
@@ -44,7 +44,7 @@ app.get('/get/:handle', getUserData)
 // users social links data
 // app.get('/get/socials/:handle', getUserSocials)
 
-app.post('/save/socials', saveSocials)
+app.post('/save/socials', saveSocials) 
 app.post('/save/profile/', saveProfile)
 app.post('/save/links/', saveLinks)
 
