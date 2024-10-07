@@ -172,7 +172,6 @@
 - Be clear and concise in your pull request titles and descriptions.
 
 ---
-
 ## **🌟 Show your support ⭐**
 Give this project a ⭐ if you find it engaging and helpful! Feel Free to reach out.
 
