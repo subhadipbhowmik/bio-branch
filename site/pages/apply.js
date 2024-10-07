@@ -50,69 +50,69 @@ const Apply = () => {
   };
 
   return (
-    <>
-      <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
-        <div className="main">
-          <div className="content bg-white border-2 px-4 py-8 rounded-md shadow-lg">
-            <h1 className='text-center font-bold text-2xl'>Join the top 1% Creators</h1>
-            <p className='text-center mb-3'>Get access to exclusive content</p>
-            <form onSubmit={handleRegister} className='flex flex-col gap-3 text-lg' method='POST'>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <img className='w-6 mr-2' src="/svg/instagram.svg" alt="" />
-                <input
-                  className='focus:outline-none'
-                  placeholder='Social Handle'
-                  type="text"
-                  value={handle}
-                  onChange={(e) => setHandle(e.target.value)}
-                />
-              </span>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <img className='w-6 mr-2' src="/svg/email.svg" alt="" />
-                <input
-                  placeholder='Add Email'
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </span>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 mr-2" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
-                  <path d="M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z"></path>
-                </svg>
-                <input
-                  placeholder='Add Password'
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </span>
-
-              <h5 className='text-center text-sm text-blue-600'>Account Type</h5>
-              <span className="flex justify-between">
-                <label htmlFor="" className='flex gap-2'>
-                  <input type="radio" value='Creator' checked={category === 'Creator'} onChange={handleCategoryChange} />
-                  <p>Creator</p>
-                </label>
-                <label htmlFor="" className='flex gap-2'>
-                  <input type="radio" value='Agency' checked={category === 'Agency'} onChange={handleCategoryChange} />
-                  <p>Agency</p>
-                </label>
-                <label htmlFor="" className='flex gap-2'>
-                  <input type="radio" value='Brand' checked={category === 'Brand'} onChange={handleCategoryChange} />
-                  <p>Brand</p>
-                </label>
-              </span>
-
-              <input type='submit' value='Apply' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
-            </form>
-
-            <h4 className='text-center pt-3'>Already Have Account? <span className='text-indigo-600'><Link href="/login">Login</Link></span></h4>
+ 
+    <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
+      <div className="main w-full max-w-md p-6 bg-white border border-gray-300 rounded-lg shadow-lg">
+        <h1 className='text-center font-bold text-3xl text-blue-600 mb-4'>Join the Top 1% Creators</h1>
+        <p className='text-center mb-4 text-gray-700'>Get access to exclusive content</p>
+        <form onSubmit={handleRegister} className='flex flex-col gap-4' method='POST'>
+          <div className='flex items-center border border-gray-300 rounded-md overflow-hidden shadow-sm'>
+            <img className='w-8 h-8 p-2' src="/svg/instagram.svg" alt="Instagram" />
+            <input 
+              className='flex-1 p-2 focus:outline-none' 
+              placeholder='Social Handle' 
+              type="text" 
+              value={handle} 
+              onChange={(e) => setHandle(e.target.value)} 
+            />
           </div>
-        </div>
-      </section>
-    </>
+          <input 
+            className='border border-gray-300 rounded-md p-2 shadow-sm focus:outline-none focus:ring focus:ring-blue-300' 
+            placeholder='Add Email' 
+            type="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required
+          />
+          <input 
+            className='border border-gray-300 rounded-md p-2 shadow-sm focus:outline-none focus:ring focus:ring-blue-300' 
+            placeholder='Add Password' 
+            type="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            required
+          />
+
+          <h5 className='text-center text-lg text-blue-600 mt-4'>Account Type</h5>
+          <div className="flex justify-between mb-4">
+            {['Creator', 'Agency', 'Brand'].map((type) => (
+              <label key={type} className='flex gap-2 items-center'>
+                <input 
+                  type="radio" 
+                  value={type} 
+                  checked={category === type} 
+                  onChange={handleCategoryChange}
+                  className='mr-2' 
+                />
+                <span className='text-gray-700'>{type}</span>
+              </label>
+            ))}
+          </div>
+
+          <input 
+            type='submit' 
+            value='Apply' 
+            className='bg-blue-600 text-white font-semibold rounded-md py-2 transition duration-200 hover:bg-blue-500 cursor-pointer'
+          />
+        </form>
+ 
+
+        <h4 className='text-center pt-4 text-gray-600'>
+          Already Have an Account? 
+          <Link href="/login" className='text-blue-600 font-semibold hover:underline'> Login</Link>
+        </h4>
+      </div>
+    </section>
   );
 };
 
