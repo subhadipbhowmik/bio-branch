@@ -9,7 +9,7 @@ const DetailsCard = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           
           {/* Card 1 */}
-          <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+          <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(79, 70, 229, 0.6)' }}>
             <div className="text-4xl mb-4">
               <Camera />
             </div>
@@ -18,7 +18,7 @@ const DetailsCard = () => {
           </div>
           
           {/* Card 2 */}
-          <div className="bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+          <div className="bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(239, 68, 68, 0.6)' }}>
             <div className="text-4xl mb-4">
               <Heart />
             </div>
@@ -27,7 +27,7 @@ const DetailsCard = () => {
           </div>
           
           {/* Card 3 */}
-          <div className="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+          <div className="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(45, 212, 191, 0.6)' }}>
             <div className="text-4xl mb-4">
               <Home />
             </div>
@@ -36,7 +36,7 @@ const DetailsCard = () => {
           </div>
           
           {/* Card 4 */}
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(251, 191, 36, 0.6)' }}>
             <div className="text-4xl mb-4">
               <User />
             </div>
@@ -45,7 +45,7 @@ const DetailsCard = () => {
           </div>
           
           {/* Card 5 */}
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+          <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(139, 92, 246, 0.6)' }}>
             <div className="text-4xl mb-4">
               <Link />
             </div>
@@ -54,7 +54,7 @@ const DetailsCard = () => {
           </div>
           
           {/* Card 6 */}
-          <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+          <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(236, 72, 153, 0.6)' }}>
             <div className="text-4xl mb-4">
               <Edit />
             </div>
