@@ -27,14 +27,19 @@ const Login = () => {
           toast.success("You are logged in successfully");
           localStorage.setItem('BioTreeToken', data.token);
           route.push('/dashboard');
+ 
         } else if (data.status === 'notfound') {
+ 
           toast.error("User not found");
         }
       })
       .catch(error => toast.error("An error occurred. Please try again."));
+ 
   };
+ 
 
   return (
+ 
     <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
       <div className="main">
         <div className="content bg-white border-2 px-8 py-10 rounded-lg shadow-lg transition-transform transform hover:scale-105">
@@ -68,6 +73,7 @@ const Login = () => {
           <h4 className='text-center pt-4 text-gray-700'>
             New here? <Link href="/apply"><span className='text-indigo-600 font-medium hover:underline'>Register</span></Link>
           </h4>
+ 
         </div>
       </div>
     </section>
