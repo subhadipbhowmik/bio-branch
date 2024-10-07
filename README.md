@@ -2,6 +2,24 @@
 
 **BioBranch** is a streamlined and customizable platform that lets you manage and showcase all your social media handles and important links in one place. Inspired by Linktree, BioBranch offers an easy-to-use interface for creating a personal landing page where you can share your online presence with the world.
 
+<div align="center">
+<p>
+  
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/subhadipbhowmik/bio-branch)
+![GitHub Repo stars](https://img.shields.io/github/stars/subhadipbhowmik/bio-branch)
+![GitHub contributors](https://img.shields.io/github/contributors/subhadipbhowmik/bio-branch)
+![GitHub last commit](https://img.shields.io/github/last-commit/subhadipbhowmik/bio-branch)
+![GitHub repo size](https://img.shields.io/github/repo-size/subhadipbhowmik/bio-branch)
+![GitHub total lines](https://sloc.xyz/github/subhadipbhowmik/bio-branch)
+![Github](https://img.shields.io/github/license/subhadipbhowmik/bio-branch)
+![GitHub issues](https://img.shields.io/github/issues/subhadipbhowmik/bio-branch)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/subhadipbhowmik/bio-branch)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/subhadipbhowmik/bio-branch)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/subhadipbhowmik/bio-branch)
+</p>
+</div>
 
 ## ✨ **Key Features**
 
@@ -149,6 +167,23 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
 - Be clear and concise in your pull request titles and descriptions.
 
 ---
+## 📢Contributors📢
+
+<a href="https://github.com/subhadipbhowmik/bio-branch/graphs/contributors"> <img src="https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch" /> </a>
+
+---
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/subhadipbhowmik/bio-branch/blob/main/LICENSE.md) file for more details.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License: MIT">
+</p>
+
+<p align="right"><a href="#top"><img src="https://img.shields.io/badge/Move%20to%20top-Blue?style=plastic" alt="Back To Top"></a></p>
+
+--- 
+
 ## **🌟 Show your support ⭐**
 Give this project a ⭐ if you find it engaging and helpful! Feel Free to reach out.
 
