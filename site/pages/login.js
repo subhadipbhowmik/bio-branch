@@ -22,18 +22,18 @@ const Login = () => {
 
     // backend implementations
     fetch('https://bio-branch-server.onrender.com/api/login', options)
-    .then(response => response.json())
-    .then(data => {
-      if(data.status === 'success'){
-        toast.success("You are logged in successfully");
-        localStorage.setItem('BioTreeToken', data.token);
-        route.push('/dashboard');
-      }
-      if(data.status === 'notfound'){
-        toast.error("User not found");
-      }
-    })
-    .catch(error => toast.error("An error occurred. Please try again."));
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'success') {
+          toast.success("You are logged in successfully");
+          localStorage.setItem('BioTreeToken', data.token);
+          route.push('/dashboard');
+        }
+        if (data.status === 'notfound') {
+          toast.error("User not found");
+        }
+      })
+      .catch(error => toast.error("An error occurred. Please try again."));
 
   }
   return (
@@ -46,9 +46,12 @@ const Login = () => {
             <form onSubmit={handleLogin} className='flex flex-col gap-3 text-lg'>
               <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
                 <img className='w-6 mr-2' src="/svg/email.svg" alt="" />
-                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </span>
-              <input className='shadow-md border-2 px-3 py-2 rounded-md focus:outline-none' placeholder='Add Password' type="password" required  value={password} onChange={(e) => setPassword(e.target.value)}/>
+              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
+                <img className='w-7 mr-2' src="/svg/password.png" alt="" />
+                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+              </span>
 
               <input type='submit' value='Login' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
             </form>
