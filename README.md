@@ -14,7 +14,6 @@
 
 ## 🚀 **Live Demo**
 
-- **Live**: [BioBranch](https://biobranch.vercel.app/)
   ![biobranch](https://github.com/user-attachments/assets/5541328d-1064-4f1a-bfa2-27f47ac3bfe5)
 
 ---
@@ -43,7 +42,10 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
 1. **Fork the Repository**:
    - Go to the repository on GitHub and click "Fork."
    - In the dropdown, choose "+ Create a new Fork" and click "Create Fork."
+---
    <img width="960" alt="fork" src="https://github.com/user-attachments/assets/80093759-f5cd-41aa-afa7-42126af0a65f">
+
+---
    <img width="960" alt="create-repo" src="https://github.com/user-attachments/assets/bb1f0393-05e7-401a-b609-f3a1f10645d6">
 
 
@@ -58,8 +60,10 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
      cd bio-branch
      ```
 
+---
 <img width="960" alt="clone-repo" src="https://github.com/user-attachments/assets/240cf28d-1db4-44ec-bcd4-e5f63c6c576b">
-     
+
+---
 <img width="960" alt="open-in-vs-code" src="https://github.com/user-attachments/assets/5318b5b2-df24-44de-a708-4476bfadad0e">
 
 
@@ -127,6 +131,14 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
 ---
 
 🎉 Congratulations! You’ve made a PR to BioBranch. Wait for it to be reviewed and merged by a maintainer.
+
+---
+
+## ** Our Contributors **
+---
+<a href="https://github.com/subhadipbhowmik/bio-branch/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch" />
+</a>
 
 ---
 
