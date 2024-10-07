@@ -44,7 +44,7 @@ const UserHeader = () => {
     }, []);
 
     return (
-        <header className='flex flex-col md:flex-row items-center justify-between p-5 bg-gray-50 border-b border-gray-200 shadow'>
+        <header className='flex flex-col md:flex-row items-center justify-between p-5 bg-gray-50 border-b border-gray-200 shadow mt-16'>
             <div className="flex flex-col md:flex-row gap-4">
               <Link href={`/edit/links`}>
                 <button className='inline-flex items-center px-4 py-2 bg-white hover:bg-purple-50 border border-purple-400 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 ease-in-out text-purple-600 hover:text-purple-800 font-semibold'>
