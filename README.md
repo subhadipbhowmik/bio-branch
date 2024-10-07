@@ -172,16 +172,6 @@
 - Be clear and concise in your pull request titles and descriptions.
 
 ---
-
-##  **📞 Contact**
-
-Feel free to reach out with questions or suggestions!
-
-- 👨‍💻Project Maintainer: **[Adarsh](https://github.com/jinx-vi-0)**
-- 📩Email: **adarshkumarmsay@gmail.com**
-- 🔗LinkedIn: **[Connect](https://www.linkedin.com/in/jinx-vi/)**
-
----
 ## **🌟 Show your support ⭐**
 Give this project a ⭐ if you find it engaging and helpful! Feel Free to reach out.
 
