@@ -50,63 +50,67 @@ const Apply = () => {
   };
 
   return (
-    <>
-      <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
-        <div className="main">
-          <div className="content bg-white border-2 px-4 py-8 rounded-md shadow-lg">
-            <h1 className='text-center font-bold text-2xl'>Join the top 1% Creators</h1>
-            <p className='text-center mb-3'>Get access to exclusive content</p>
-            <form onSubmit={handleRegister} className='flex flex-col gap-3 text-lg' method='POST'>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <img className='w-6 mr-2' src="/svg/instagram.svg" alt="" />
-                <input 
-                  className='focus:outline-none' 
-                  placeholder='Social Handle' 
-                  type="text" 
-                  value={handle} 
-                  onChange={(e) => setHandle(e.target.value)} 
-                />
-              </span>
-              <input 
-                className='shadow-md border-2 px-3 py-2 rounded-md focus:outline-none' 
-                placeholder='Add Email' 
-                type="email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-              />
-              <input 
-                className='shadow-md border-2 px-3 py-2 rounded-md focus:outline-none' 
-                placeholder='Add Password' 
-                type="password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                required
-              />
-
-              <h5 className='text-center text-sm text-blue-600'>Account Type</h5>
-              <span className="flex justify-between">
-                <label htmlFor="" className='flex gap-2'>
-                  <input type="radio" value='Creator' checked={category === 'Creator'} onChange={handleCategoryChange}/>
-                  <p>Creator</p>
-                </label>
-                <label htmlFor="" className='flex gap-2'>
-                  <input type="radio" value='Agency' checked={category === 'Agency'} onChange={handleCategoryChange}/>
-                  <p>Agency</p>
-                </label>
-                <label htmlFor="" className='flex gap-2'>
-                  <input type="radio" value='Brand' checked={category === 'Brand'} onChange={handleCategoryChange} />
-                  <p>Brand</p>
-                </label>
-              </span>
-
-              <input type='submit' value='Apply' className='bg-blue-500 text-white px-3 py-2 rounded-md'/>
-            </form>
-
-            <h4 className='text-center pt-3'>Already Have Account? <span className='text-indigo-600'><Link href="/login">Login</Link></span></h4>
+    <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
+      <div className="main w-full max-w-md p-6 bg-white border border-gray-300 rounded-lg shadow-lg">
+        <h1 className='text-center font-bold text-3xl text-blue-600 mb-4'>Join the Top 1% Creators</h1>
+        <p className='text-center mb-4 text-gray-700'>Get access to exclusive content</p>
+        <form onSubmit={handleRegister} className='flex flex-col gap-4' method='POST'>
+          <div className='flex items-center border border-gray-300 rounded-md overflow-hidden shadow-sm'>
+            <img className='w-8 h-8 p-2' src="/svg/instagram.svg" alt="Instagram" />
+            <input 
+              className='flex-1 p-2 focus:outline-none' 
+              placeholder='Social Handle' 
+              type="text" 
+              value={handle} 
+              onChange={(e) => setHandle(e.target.value)} 
+            />
           </div>
-        </div>
-      </section>
-    </>
+          <input 
+            className='border border-gray-300 rounded-md p-2 shadow-sm focus:outline-none focus:ring focus:ring-blue-300' 
+            placeholder='Add Email' 
+            type="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required
+          />
+          <input 
+            className='border border-gray-300 rounded-md p-2 shadow-sm focus:outline-none focus:ring focus:ring-blue-300' 
+            placeholder='Add Password' 
+            type="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            required
+          />
+
+          <h5 className='text-center text-lg text-blue-600 mt-4'>Account Type</h5>
+          <div className="flex justify-between mb-4">
+            {['Creator', 'Agency', 'Brand'].map((type) => (
+              <label key={type} className='flex gap-2 items-center'>
+                <input 
+                  type="radio" 
+                  value={type} 
+                  checked={category === type} 
+                  onChange={handleCategoryChange}
+                  className='mr-2' 
+                />
+                <span className='text-gray-700'>{type}</span>
+              </label>
+            ))}
+          </div>
+
+          <input 
+            type='submit' 
+            value='Apply' 
+            className='bg-blue-600 text-white font-semibold rounded-md py-2 transition duration-200 hover:bg-blue-500 cursor-pointer'
+          />
+        </form>
+
+        <h4 className='text-center pt-4 text-gray-600'>
+          Already Have an Account? 
+          <Link href="/login" className='text-blue-600 font-semibold hover:underline'> Login</Link>
+        </h4>
+      </div>
+    </section>
   );
 };
 
