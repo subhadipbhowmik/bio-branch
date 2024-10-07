@@ -3,15 +3,19 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from "react";
 
 const NavBar = () => {
-    const router = useRouter()
+    const router = useRouter();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
-    useEffect(()=>{
+
+    useEffect(() => {
         setMobileMenuOpen(false);
-    }, [router.asPath])
+    }, [router.asPath]);
+
+    // Function to determine if the link is active
+    const isActive = (path) => router.pathname === path;
 
     return (
     <>    
@@ -28,19 +32,19 @@ const NavBar = () => {
             <div className={`${mobileMenuOpen ? "" : "hidden"} w-full md:block md:w-auto focus:outline-none`} id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                <Link href="/" className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</Link>
+                    <Link href="/" className={`block py-2 pl-3 pr-4 rounded md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActive('/') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'}`} aria-current="page">Home</Link>
                 </li>
                 <li>
-                <Link href="/apply" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Apply</Link>
+                    <Link href="/apply" className={`block py-2 pl-3 pr-4 rounded md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActive('/apply') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'}`}>Apply</Link>
                 </li>
                 <li>
-                <Link href="/login" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</Link>
+                    <Link href="/login" className={`block py-2 pl-3 pr-4 rounded md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActive('/login') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'}`}>Login</Link>
                 </li>
                 <li>
-                <Link href="/dashboard" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Dashboard</Link>
+                    <Link href="/dashboard" className={`block py-2 pl-3 pr-4 rounded md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActive('/dashboard') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'}`}>Dashboard</Link>
                 </li>
                 <li>
-                <Link href="/contact" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact Us</Link>
+                    <Link href="/contact" className={`block py-2 pl-3 pr-4 rounded md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent ${isActive('/contact') ? 'text-blue-700' : 'text-gray-900 hover:text-blue-700'}`}>Contact Us</Link>
                 </li>
             </ul>
             </div>
@@ -50,4 +54,4 @@ const NavBar = () => {
     )
 }
 
-export default NavBar
+export default NavBar;
