@@ -1,81 +1,114 @@
 import React from 'react'
 import Link from 'next/link'
-import { Apple, Play } from 'lucide-react'
+import { Apple, Play, Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react' // Imported from lucide-react
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
+    <footer className="bg-black text-white py-10 px-6">
+      <div className="container mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
 
-      {/* Wave Effect (You can add SVG wave here for a design touch) */}
-      <svg className="absolute top-0 left-0 right-0 -mt-1 h-8" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#1a202c" fillOpacity="1" d="M0,224L48,208C96,192,192,160,288,160C384,160,480,192,576,186.7C672,181,768,139,864,133.3C960,128,1056,160,1152,176C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-      </svg>
-
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 space-y-8 md:space-y-0">
-
-        {/* Left Section: Logo & Copyright */}
-        <div className="flex flex-col items-center md:items-start">
-          <Link href="/" className="text-2xl font-bold">
-            HireHUB 
+        {/* Logo and App Store Buttons */}
+        <div className="space-y-4">
+          <Link href="/" className="text-xl font-bold">
+            <img src="/images/favicon.ico" alt="SiteLogo" />
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Biotree</span>
           </Link>
-          <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
-        </div>
-
-        {/* Center Section: App Store Links (Optional) */}
-        <div className="flex space-x-4 md:order-3">
-          <Link href="https://play.google.com/store" target="_blank">
-            <Play className="w-8 h-8 text-gray-400 hover:text-white transition" />
-          </Link>
-          <Link href="https://www.apple.com/app-store/" target="_blank">
-            <Apple className="w-8 h-8 text-gray-400 hover:text-white transition" />
-          </Link>
-        </div>
-
-
-{/* Feature: Contact Us */}
-        <div className="flex flex-col items-start mb-6 md:mb-0">
-          <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-          <div className="flex flex-col space-y-2">
-            {/* Email Contact */}
-            <a href="mailto:contact@yourdomain.com" className="text-sm font-semibold hover:underline">
-              contact@yourdomain.com
-            </a>
-            {/* Phone Contact */}
-            <a href="tel:+123456789" className="text-sm font-semibold hover:underline">
-              +1 234 567 89
-            </a>
-            {/* Or a Contact Form Link */}
-            <Link href="/contact" className="text-sm font-semibold hover:underline">
-              Contact Form
+          <div className="space-y-2">
+            <Link href="#" className="block">
+              <img src="/images/store.png" alt="AppGallery" className="h-10" />
             </Link>
+            <Link href="#" className="block">
+              <img src="/images/store2.png" alt="Windows Store" className="h-10" />
+            </Link>
+            <Link href="#" className="block">
+              <img src="/images/store3.png" alt="Google Play" className="h-10" />
+            </Link>
+            {/* <Link href="#" className="block">
+              <img src="/images/footer_logo_4.png" alt="App Store" className="h-10" />
+            </Link> */}
           </div>
         </div>
 
-        {/* Right Section: Social Media Links */}
-        <div className="flex space-x-6 md:order-2">
-          <Link href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter" className="text-gray-400 hover:text-blue-400 transition">
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* Add Twitter SVG Path */}
-            </svg>
-          </Link>
-          <Link href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn" className="text-gray-400 hover:text-blue-600 transition">
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* Add LinkedIn SVG Path */}
-            </svg>
-          </Link>
-          <Link href="https://github.com/yourprofile" target="_blank" aria-label="GitHub" className="text-gray-400 hover:text-blue-600 transition">
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* Add GitHub SVG Path */}
-            </svg>
-          </Link>
+        {/* Product Links */}
+        <div>
+          <h3 className="font-semibold mb-4">Product</h3>
+          <ul className="space-y-2">
+            <li><Link href="#" className="text-sm hover:underline">Profile</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Your tree</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Manage links</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Content</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Integrations</Link></li>
+          </ul>
         </div>
+
+        {/* Use Cases Links */}
+        <div>
+          <h3 className="font-semibold mb-4">Use Cases</h3>
+          <ul className="space-y-2">
+            <li><Link href="#" className="text-sm hover:underline">Support</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Theme</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Connections</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Customization</Link></li>
+          </ul>
+        </div>
+
+        {/* Company Links */}
+        <div>
+          <h3 className="font-semibold mb-4">Company</h3>
+          <ul className="space-y-2">
+            <li><Link href="#" className="text-sm hover:underline">About Us</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Careers</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">FAQs</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Teams</Link></li>
+            <li><Link href="#" className="text-sm hover:underline">Contact Us</Link></li>
+          </ul>
+        </div>
+
+        {/* Subscribe Section */}
+        <div>
+          <h3 className="font-semibold mb-4">Subscribe</h3>
+          <p className="text-sm mb-4">Subscribe to stay tuned for new web design and latest updates. Let’s do it!</p>
+          <form className="space-y-4">
+            <input
+              type="email"
+              placeholder="Enter your email Address"
+              className="w-full p-2 border border-gray-300 rounded-md"
+            />
+            <button type="submit" className="w-full bg-purple-500 text-white p-2 rounded-md">
+              Subscribe
+            </button>
+          </form>
+          <div className="mt-4 text-sm">
+            <p>Wisconsin Ave, Suite 700</p>
+            <p>Chevy Chase, Maryland 20815</p>
+            <p><a href="mailto:support@figma.com" className="hover:underline">support@biotree.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      {/* Social Icons */}
+      <div className="container mx-auto flex justify-center mt-10 space-x-4">
+        <Link href="#" className="text-gray-400 hover:text-blue-500">
+          <Facebook className="h-6 w-6" />
+        </Link>
+        <Link href="#" className="text-gray-400 hover:text-blue-500">
+          <Twitter className="h-6 w-6" />
+        </Link>
+        <Link href="#" className="text-gray-400 hover:text-pink-500">
+          <Instagram className="h-6 w-6" />
+        </Link>
+        <Link href="#" className="text-gray-400 hover:text-blue-600">
+          <Linkedin className="h-6 w-6" />
+        </Link>
+        <Link href="#" className="text-gray-400 hover:text-red-600">
+          <Youtube className="h-6 w-6" />
+        </Link>
       </div>
 
       {/* Bottom Text */}
       <div className="text-center mt-10">
-        <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
+        <p className="text-sm text-gray-500">&copy;2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
-      
     </footer>
   )
 }
