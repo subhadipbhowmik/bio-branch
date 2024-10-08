@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Apple, Play } from 'lucide-react'
 
+
 const Footer = () => {
   return (
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
@@ -16,23 +17,27 @@ const Footer = () => {
         {/* Left Section: Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="text-2xl font-bold">
-            HireHUB 
+            HireHUB
           </Link>
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
 
-        {/* Center Section: App Store Links (Optional) */}
-        <div className="flex space-x-4 md:order-3">
-          <Link href="https://play.google.com/store" target="_blank">
-            <Play className="w-8 h-8 text-gray-400 hover:text-white transition" />
-          </Link>
-          <Link href="https://www.apple.com/app-store/" target="_blank">
-            <Apple className="w-8 h-8 text-gray-400 hover:text-white transition" />
-          </Link>
+        {/* {Right -  Download the App from Part} */}
+        <div className="flex flex-col items-center md:order-3 space-y-4">
+          <h3 className="text-lg font-semibold text-gray-300 uppercase tracking-wider">
+            Download The App From
+          </h3>
+          <div className="flex space-x-6">
+            <Link href="https://play.google.com/store" target="_blank">
+              <Play className="w-10 h-10 text-gray-400 hover:text-blue-500 transition transform hover:scale-110" />
+            </Link>
+            <Link href="https://www.apple.com/app-store/" target="_blank">
+              <Apple className="w-10 h-10 text-gray-400 hover:text-black transition transform hover:scale-110" />
+            </Link>
+          </div>
         </div>
 
-
-{/* Feature: Contact Us */}
+        {/* Feature: Contact Us */}
         <div className="flex flex-col items-start mb-6 md:mb-0">
           <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
           <div className="flex flex-col space-y-2">
@@ -75,7 +80,7 @@ const Footer = () => {
       <div className="text-center mt-10">
         <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
-      
+
     </footer>
   )
 }
