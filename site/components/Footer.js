@@ -1,83 +1,69 @@
-import React from 'react'
-import Link from 'next/link'
-import { Apple, Play } from 'lucide-react'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
+    <footer aria-label="Site Footer" className="bg-[#faf7f2] text-black py-10 px-8 mt-6">
+      {/* First Row: Logo, Social Icons, Sign Up */}
+      <div className="flex flex-col md:flex-row items-center justify-between py-4">
+        <p className="text-2xl font-bold text-[#2a2a46]">Biotree</p>
+        <div className="flex space-x-6 mt-4 md:mt-0">
+          <a href="#"><FontAwesomeIcon icon={faTwitter} className="text-[#2a2a46] hover:text-blue-500" /></a>
+          <a href="#"><FontAwesomeIcon icon={faFacebook} className="text-[#2a2a46] hover:text-blue-600" /></a>
+          <a href="#"><FontAwesomeIcon icon={faInstagram} className="text-[#2a2a46] hover:text-pink-600" /></a>
+          <a href="#"><FontAwesomeIcon icon={faGithub} className="text-[#2a2a46] hover:text-gray-900" /></a>
+        </div>
+        <button className="bg-[#2a2a46] hover:bg-[#1d1d33] text-white font-semibold py-2 px-8 rounded-full mt-4 md:mt-0">Sign up</button>
+      </div>
 
-      {/* Wave Effect (You can add SVG wave here for a design touch) */}
-      <svg className="absolute top-0 left-0 right-0 -mt-1 h-8" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#1a202c" fillOpacity="1" d="M0,224L48,208C96,192,192,160,288,160C384,160,480,192,576,186.7C672,181,768,139,864,133.3C960,128,1056,160,1152,176C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-      </svg>
+      <hr className="border-t border-[#2a2a46] my-6" />
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10 space-y-8 md:space-y-0">
-
-        {/* Left Section: Logo & Copyright */}
-        <div className="flex flex-col items-center md:items-start">
-          <Link href="/" className="text-2xl font-bold">
-            HireHUB 
-          </Link>
-          <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+      {/* Second Row: About, Newsletter, Links */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* About Section */}
+        <div className="text-left">
+          <h4 className="text-xl font-semibold text-[#2a2a46]">About Biotree</h4>
+          <p className="text-sm text-gray-600 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.**
+          </p>
         </div>
 
-        {/* Center Section: App Store Links (Optional) */}
-        <div className="flex space-x-4 md:order-3">
-          <Link href="https://play.google.com/store" target="_blank">
-            <Play className="w-8 h-8 text-gray-400 hover:text-white transition" />
-          </Link>
-          <Link href="https://www.apple.com/app-store/" target="_blank">
-            <Apple className="w-8 h-8 text-gray-400 hover:text-white transition" />
-          </Link>
-        </div>
-
-
-{/* Feature: Contact Us */}
-        <div className="flex flex-col items-start mb-6 md:mb-0">
-          <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-          <div className="flex flex-col space-y-2">
-            {/* Email Contact */}
-            <a href="mailto:contact@yourdomain.com" className="text-sm font-semibold hover:underline">
-              contact@yourdomain.com
-            </a>
-            {/* Phone Contact */}
-            <a href="tel:+123456789" className="text-sm font-semibold hover:underline">
-              +1 234 567 89
-            </a>
-            {/* Or a Contact Form Link */}
-            <Link href="/contact" className="text-sm font-semibold hover:underline">
-              Contact Form
-            </Link>
+        {/* Newsletter Section */}
+        <div className="text-center">
+          <h4 className="text-xl font-semibold text-[#2a2a46]">Join Our newsletter</h4>
+          <p className="text-sm text-gray-600 mt-2">Be the first to know about our latest updates.</p>
+          <div className="mt-4 flex justify-center">
+            <input
+              type="email"
+              placeholder="Enter your mail"
+              className="border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
+            />
+            <button className="ml-2 bg-[#2a2a46] hover:bg-[#1d1d33] text-white font-semibold px-6 py-2 rounded-full text-sm">
+              Subscribe
+            </button>
           </div>
         </div>
 
-        {/* Right Section: Social Media Links */}
-        <div className="flex space-x-6 md:order-2">
-          <Link href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter" className="text-gray-400 hover:text-blue-400 transition">
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* Add Twitter SVG Path */}
-            </svg>
-          </Link>
-          <Link href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn" className="text-gray-400 hover:text-blue-600 transition">
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* Add LinkedIn SVG Path */}
-            </svg>
-          </Link>
-          <Link href="https://github.com/yourprofile" target="_blank" aria-label="GitHub" className="text-gray-400 hover:text-blue-600 transition">
-            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              {/* Add GitHub SVG Path */}
-            </svg>
-          </Link>
+        {/* Useful Links Section */}
+        <div className="text-left ">
+          <h4 className="text-xl font-semibold text-[#2a2a46]">Useful Links</h4>
+          <div className="flex text-sm text-gray-600 items-center justify-between pr-20 mt-5">
+            <p><a href="#" className="hover:underline">Home</a></p>
+            <p><a href="#" className="hover:underline">Guide</a></p>
+            <p><a href="#" className="hover:underline">Features</a></p>
+          </div>
+          <div className="flex text-sm text-gray-600 items-center justify-between pr-20 mt-5">
+            <p><a href="#" className="hover:underline">Terms & Conditions</a></p>
+            <p><a href="#" className="hover:underline">Privacy Policy</a></p>
+          </div>
         </div>
       </div>
-
-      {/* Bottom Text */}
-      <div className="text-center mt-10">
-        <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
-      </div>
-      
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
