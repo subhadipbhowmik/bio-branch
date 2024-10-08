@@ -61,6 +61,11 @@ nav{
   z-index: 1000; /* Make sure it stays above other elements */
 }
 
+/*adding space between topnavbar and creator list section*/
+.py-12{
+  margin-top:130px;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
