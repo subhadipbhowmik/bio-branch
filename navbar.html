@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biotree Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            width: 35px;
+            margin-right: 10px;
+        }
+
+        .navbar-logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .navbar-links ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar-links ul li {
+            margin-left: 20px;
+        }
+
+        .navbar-links ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-links ul li a:hover {
+            color: #0056b3;
+        }
+
+        /* Mobile view */
+        @media (max-width: 768px) {
+            .navbar-links ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="https://via.placeholder.com/35" alt="Biotree Logo">
+            <h1>Biotree</h1>
+        </div>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Apply</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</body>
+</html>
+
+ 
