@@ -30,7 +30,10 @@ const Faq = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {faqData.map((faq, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+          <div 
+            key={index} 
+            className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4 transition-transform transform hover:scale-105 hover:shadow-lg"
+          >
             <div className="flex-shrink-0">
               {faq.icon}
             </div>
