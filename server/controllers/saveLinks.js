@@ -21,9 +21,9 @@ const saveLinks = async (req, res) => {
         user.links = newLinks;
         await user.save();
 
-        return res.json({ message: "saved", status: "success" });
+        return res.status(200).json({ message: "saved", status: "success" });
     } catch (error) {
-        return res.json({ error: error.message, status: "error" });
+        return res.status(500).json({ error: error.message, status: "error" });
     }
 };
 

@@ -20,13 +20,13 @@ const dashboardData = async (req, res) => {
 
         console.log(userData);  // For debugging
 
-        return res.json({
+        return res.status(200).json({
             message: 'Data Loaded',
             userData: userData,
             status: 'okay',
         });
     } catch (error) {
-        return res.json({
+        return res.status(500).json({
             error: error.message,
             status: 'error',
         });
