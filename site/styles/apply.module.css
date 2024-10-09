@@ -3,6 +3,11 @@
     background-image: url('/images/earth.jpg');
 }
 
+.borderr:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .background::after {
     content: "";
     position: absolute;
@@ -12,6 +17,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 @media screen and (max-width: 768px) {
     .background {
