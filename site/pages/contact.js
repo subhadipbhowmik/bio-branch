@@ -1,43 +1,45 @@
-import React, { useState } from 'react';
-import styles from '../styles/contact.module.css'; // Create a new CSS module for styles
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import styles from "../styles/contact.module.css"; // Create a new CSS module for styles
+import { toast } from "react-toastify";
 
 const Contact = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [region, setRegion] = useState('');
-  const [reason, setReason] = useState('');
-  const [feedback, setFeedback] = useState(''); // State for feedback
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [region, setRegion] = useState("");
+  const [reason, setReason] = useState("");
+  const [feedback, setFeedback] = useState(""); // State for feedback
 
   const handleRequestCall = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    toast.success('Request for a call submitted!');
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setPhone('');
-    setRegion('');
-    setReason('');
+    toast.success("Request for a call submitted!");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setRegion("");
+    setReason("");
   };
 
   const handleFeedbackSubmit = (e) => {
     e.preventDefault();
     // Handle feedback submission logic here
-    toast.success('Feedback submitted!');
-    setFeedback(''); // Clear feedback input
+    toast.success("Feedback submitted!");
+    setFeedback(""); // Clear feedback input
   };
 
   return (
-    <div className="bg-white min-h-screen p-6">
+    <div className="bg-white min-h-screen p-6 ">
       <h2 className="text-2xl font-bold text-center mb-6">
         How would you like to contact Bio-branch?
       </h2>
-      <div className="flex justify-center gap-6"> {/* Center the boxes with gap */}
+      <div className="flex justify-center gap-6 xl:flex-row flex-col items-center">
+        {" "}
+        {/* Center the boxes with gap */}
         {/* Request a Call Box */}
-        <div className={`${styles.box} w-1/3 p-4`}>
+        <div className={`${styles.box} xl:w-1/3 p-4 sm:w-3/4 w-[90%]  `}>
           <h3 className="font-semibold text-xl mb-4">Request a Call</h3>
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
@@ -87,22 +89,27 @@ const Contact = () => {
               className="border rounded p-2"
               required
             />
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white p-2 rounded"
+            >
               Submit
             </button>
           </form>
         </div>
-
         {/* Support and Feedback Box */}
-        <div className="w-1/3 flex flex-col gap-4">
-          <div className={`${styles.box} p-7 mb-5`}>
+        <div className="xl:w-1/3 w-full xl:items-start flex flex-col gap-4 items-center">
+          <div className={`${styles.box} p-7 mb-5 sm:w-3/4 w-full xl:w-full`}>
             <h3 className="font-semibold text-xl mb-4">Support</h3>
             <p>Phone: (123) 456-7890</p>
             <p>Email: support@bio-branch.com</p>
           </div>
           <div className={`${styles.box} p-7`}>
             <h3 className="font-semibold text-xl mb-2">Feedback</h3>
-            <p>Your feedback is important to us! Please let us know your thoughts.</p>
+            <p>
+              Your feedback is important to us! Please let us know your
+              thoughts.
+            </p>
             <form onSubmit={handleFeedbackSubmit} className="flex flex-col">
               <textarea
                 placeholder="Your feedback here..."
@@ -111,7 +118,10 @@ const Contact = () => {
                 className="border rounded p-2 w-full"
                 required
               />
-              <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-2">
+              <button
+                type="submit"
+                className="bg-blue-500 text-white p-2 rounded mt-2"
+              >
                 Submit Feedback
               </button>
             </form>
