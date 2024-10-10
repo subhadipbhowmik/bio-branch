@@ -2,6 +2,8 @@
 
 **BioBranch** is a streamlined and customizable platform that lets you manage and showcase all your social media handles and important links in one place. Inspired by Linktree, BioBranch offers an easy-to-use interface for creating a personal landing page where you can share your online presence with the world.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## ✨ **Key Features**
 
@@ -11,12 +13,15 @@
 - **📱 Fully Responsive Design**: Whether on mobile, tablet, or desktop, your BioBranch page will always look stunning and accessible.
 - **🔒 Secure & Private**: Your data stays safe with top-notch security and privacy controls, giving you peace of mind while focusing on growth.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🚀 **Live Demo**
 
   ![biobranch](https://github.com/user-attachments/assets/5541328d-1064-4f1a-bfa2-27f47ac3bfe5)
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🛠️ **Tech Stack**
 
@@ -33,7 +38,8 @@
 ![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?logo=vercel&logoColor=white)
 
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 👨‍💻 **Getting Started with Contributions** 👩‍💻
 
@@ -47,7 +53,8 @@ We welcome all interested developers to contribute to **BioBranch**! Whether you
 
 We welcome all contributions to improve **BioBranch**! If you'd like to contribute, please follow the [Contributing.md](./CONTRIBUTING.md) to get details on how to get started.
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 <div>
   <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35">Our Contributors</h2>
@@ -60,7 +67,8 @@ We welcome all contributions to improve **BioBranch**! If you'd like to contribu
 
 </div>
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ##  **🏆 Contribution Guidelines 📑**
 - Ensure that the code you write follows best practices and is well documented.
@@ -68,7 +76,10 @@ We welcome all contributions to improve **BioBranch**! If you'd like to contribu
 - Keep your branch updated with the main branch to avoid conflicts.
 - Be clear and concise in your pull request titles and descriptions.
 
----
+<br>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 👥 Team
 
@@ -79,7 +90,9 @@ We welcome all contributions to improve **BioBranch**! If you'd like to contribu
 
 For any inquiries or feedback, please contact. Happy Contributing 🫡
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## **🌟 Show your support ⭐**
 Give this project a ⭐ if you find it engaging and helpful! Feel Free to reach out.
 
