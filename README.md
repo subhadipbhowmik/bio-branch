@@ -134,11 +134,16 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
 
 ---
 
-## ** Our Contributors **
----
-<a href="https://github.com/subhadipbhowmik/bio-branch/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch" />
-</a>
+<div>
+  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35">Our Contributors</h2>
+  <div align = "center">
+ <h3>Thank you for contributing to our repository</h3>
+
+![Contributors](https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch&v=1)
+
+### Show some ❤️ by starring this awesome repository!
+
+</div>
 
 ---
 
