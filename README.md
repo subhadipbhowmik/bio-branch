@@ -149,6 +149,17 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
 - Be clear and concise in your pull request titles and descriptions.
 
 ---
+
+## 👥 Team
+
+| ![Shubhadip Bhowmik](https://avatars.githubusercontent.com/u/57017965?v=4&s=80) |
+|:--:|
+| **Shubhadip Bhowmik** <br> <sub>Project Admin</sub> | 
+| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/shubhadip-bhowmik/) |
+
+For any inquiries or feedback, please contact. Happy Contributing 🫡
+
+---
 ## **🌟 Show your support ⭐**
 Give this project a ⭐ if you find it engaging and helpful! Feel Free to reach out.
 
