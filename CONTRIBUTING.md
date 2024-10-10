@@ -8,55 +8,113 @@ Thank you for your interest in contributing to BioBranch! This guide will help y
 
 ## 🌟 Creating Your First Pull Request
 
-1. **Star this repository.**
-2. **Fork this repository.**
-3. **Clone the forked repository:**
-    ```bash
-    git clone https://github.com/<your-github-username>/bio-branch.git
-    ```
-    - If you have already forked the project, update your copy before working:
-    ```bash
-    git remote update
-    ```
+1. **Fork the Repository**:
+   - Go to the repository on GitHub and click "Fork."
+   - In the dropdown, choose "+ Create a new Fork" and click "Create Fork."
+---
+   <img width="960" alt="fork" src="https://github.com/user-attachments/assets/80093759-f5cd-41aa-afa7-42126af0a65f">
 
-4. **Navigate to the project directory:**
+---
+   <img width="960" alt="create-repo" src="https://github.com/user-attachments/assets/bb1f0393-05e7-401a-b609-f3a1f10645d6">
+
+<br>
+
+2. **Clone the Forked Repository**:
+   - From your forked repo, copy the URL:
+     ```bash
+     https://github.com/<your-username>/bio-branch.git
+     ```
+   - Clone the repository to your local machine:
+     ```bash
+     git clone https://github.com/<your-username>/bio-branch.git
+     cd bio-branch
+     ```
+   - If you have already forked the project, update your copy before working:
+     ```bash
+     git remote update
+     ```
+
+---
+<img width="960" alt="clone-repo" src="https://github.com/user-attachments/assets/240cf28d-1db4-44ec-bcd4-e5f63c6c576b">
+
+---
+<img width="960" alt="open-in-vs-code" src="https://github.com/user-attachments/assets/5318b5b2-df24-44de-a708-4476bfadad0e">
+
+<br>
+
+3. **Navigate to the project directory:**
     ```bash
     cd bio-branch
     ```
 
-5. **Set an upstream with the parent repository and local repository:**
-    ```bash
-    git remote add upstream https://github.com/subhadipbhowmik/bio-branch.git
-    ```
 
-6. **Create a new branch:**
-    ```bash
-    git checkout -b <your_branch_name>
-    ```
-    Branch name examples: 
-    `feature/new-theme` or `bug/link-analytics`
+4. **Add Remote Upstream**:
+   - Add the original repository as an upstream remote to sync future changes:
+     ```bash
+     git remote add upstream https://github.com/subhadipbhowmik/bio-branch.git
+     ```
 
-7. **Make changes.**
-    Implement the necessary changes in code or files.
+5. **Verify Remotes**:
+   - Check that your origin and upstream remotes are set correctly:
+     ```bash
+     git remote -v
+     ```
 
-8. **Stage your changes and commit:**
-    ```bash
-    git add .
-    git commit -m "<your_commit_message>"
-    ```
+6. **Sync with Upstream**:
+   - Pull the latest changes from the upstream repository:
+     ```bash
+     git pull upstream main
+     ```
 
-9. **Push your local commits to the remote repository:**
-    ```bash
-    git push -u origin <your_branch_name>
-    ```
+7. **Install Dependencies**:
+   - For backend changes:
+     ```bash
+     cd server
+     npm install
+     npm start
+     ```
+   - For frontend changes:
+     ```bash
+     cd site
+     npm install
+     npm run dev
+     ```
 
-10. **Create a Pull Request:**
+8. **Create a Feature Branch**:
+   - Create a new branch for your changes:
+     ```bash
+     git checkout -b <feature-branch>
+     ```
+
+9. **Make Changes and Track Them**:
+   - After making changes, track them:
+     ```bash
+     git status
+     git diff
+     ```
+
+10. **Commit Your Changes**:
+   - Stage and commit your changes:
+     ```bash
+     git add .
+     git commit -m "Add feature: <description>"
+     ```
+
+11. **Push Your Changes**:
+    - Push your feature branch to your remote repository:
+      ```bash
+      git push -u origin <feature-branch>
+      ```
+
+12. **Create a Pull Request**:
     - Go to your forked repository on GitHub.
     - Click on the "Compare & pull request" button.
     - Write a title and description for your pull request.
-    - Mention the issue number in the pull request description (e.g., "Fixes #1").
+    - Mention the issue number in the pull request description (e.g., "Fixes #1") and submit the PR.
 
-11. **Congratulations! 🎉 You've made your contribution.**
+<br>
+
+🎉 Congratulations! You’ve made a PR to BioBranch. Wait for it to be reviewed and merged by a maintainer.
 
 ---
 
