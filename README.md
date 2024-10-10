@@ -5,6 +5,15 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
+### This project is now OFFICIALLY accepted for **GSSoC 2024 Extended** Program:
+
+<div align="center">
+  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+</div>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## ✨ **Key Features**
 
 - **🎨 Customizable Profiles**: Personalize your BioBranch page with themes, colors, and styles that perfectly match your brand's vibe.
