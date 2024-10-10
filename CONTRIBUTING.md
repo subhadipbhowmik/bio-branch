@@ -144,10 +144,10 @@ When contributing to BioBranch, please follow these guidelines:
 
 If you're new to Git or GitHub, check out these resources:
 
-- **Forking a Repo**
-- **Cloning a Repo**
-- **How to create a Pull Request**
-- **Getting started with Git and GitHub**
+- [Forking a Repo](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+- [Cloning a Repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- [How to create a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+- [Getting started with Git and GitHub](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
 
 You can also reach out to the project maintainers if you're stuck.
 
