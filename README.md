@@ -45,7 +45,7 @@ We welcome all interested developers to contribute to **BioBranch**! Whether you
 4. Push to the branch 
 5. Open a Pull Request.
 
-
+We welcome all contributions to improve **BioBranch**! If you'd like to contribute, please follow the [Contributing.md](./CONTRIBUTING.md) to get details on how to get started.
 
 ---
 
