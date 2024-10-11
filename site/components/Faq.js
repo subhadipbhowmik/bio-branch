@@ -32,7 +32,7 @@ const Faq = () => {
         {faqData.map((faq, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default">
+            className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4 transform hover:scale-105 transition-all hover:shadow-2xl duration-300 ease-in-out cursor-default">
             <div className="flex-shrink-0">
               {faq.icon}
             </div>
