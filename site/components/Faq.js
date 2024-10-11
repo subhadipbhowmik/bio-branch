@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { HelpCircle, Info, CheckCircle, XCircle } from 'lucide-react';
 
 const Faq = () => {
@@ -24,15 +24,6 @@ const Faq = () => {
       icon: <XCircle className="w-6 h-6 text-red-500" />
     }
   ];
-
-  // Function to handle mouse enter/leave events
-  function handleMouseEvent(eventType, faq) {
-    if (eventType === 'enter') {
-      console.log(`Mouse entered FAQ: ${faq.question}`);
-    } else if (eventType === 'leave') {
-      console.log(`Mouse left FAQ: ${faq.question}`);
-    }
-  }
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-6">
