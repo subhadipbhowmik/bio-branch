@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HelpCircle, Info, CheckCircle, XCircle } from 'lucide-react';
 
 const Faq = () => {
@@ -25,12 +25,23 @@ const Faq = () => {
     }
   ];
 
+  // Function to handle mouse enter/leave events
+  function handleMouseEvent(eventType, faq) {
+    if (eventType === 'enter') {
+      console.log(`Mouse entered FAQ: ${faq.question}`);
+    } else if (eventType === 'leave') {
+      console.log(`Mouse left FAQ: ${faq.question}`);
+    }
+  }
+
   return (
     <div className="max-w-4xl mx-auto py-12 px-6">
       <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {faqData.map((faq, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default">
             <div className="flex-shrink-0">
               {faq.icon}
             </div>
