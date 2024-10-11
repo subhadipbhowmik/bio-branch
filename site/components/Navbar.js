@@ -1,18 +1,26 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
 
 const NavBar = () => {
-    const router = useRouter()
+    const router = useRouter();
     const currentRoute = router.pathname;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        setMobileMenuOpen(false);
+    }, [router.asPath]);
+
+    useEffect(() => {
+        // Check if the user is logged in by looking for the token in localStorage
+        const token = localStorage.getItem('BioTreeToken');
+        setIsLoggedIn(!!token); // Set isLoggedIn to true if token exists
+    }, []);
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
     };
-    useEffect(()=>{
-        setMobileMenuOpen(false);
-    }, [router.asPath])
 
     return (
     <>    
@@ -37,9 +45,12 @@ const NavBar = () => {
                 <li>
                 <Link href="/login" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/login' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Login</Link>
                 </li>
-                <li>
-                <Link href="/dashboard" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/dashboard' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Dashboard</Link>
-                </li>
+                {/* Conditionally render the Dashboard link if the user is logged in */}
+                {isLoggedIn && (
+                    <li>
+                    <Link href="/dashboard" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/dashboard' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Dashboard</Link>
+                    </li>
+                )}
                 <li>
                 <Link href="/contact" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact Us</Link>
                 </li>
@@ -48,7 +59,7 @@ const NavBar = () => {
         </div>
         </nav>
     </>
-    )
+    );
 }
 
-export default NavBar
+export default NavBar;
