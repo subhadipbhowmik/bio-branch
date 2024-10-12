@@ -38,7 +38,7 @@ const Process = () => {
           {/* Process Steps */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {/* Step 1 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center hover:scale-105 transition-all ease-in-out">
               <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border h-[100%] border-gray-300">
                 <User className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-fadeIn" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Sign Up</h3>
@@ -47,7 +47,7 @@ const Process = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center hover:scale-105 transition-all ease-in-out">
               <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border h-[100%] border-gray-300">
                 <Edit className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-scaleUp" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Customize Your Profile</h3>
@@ -56,7 +56,7 @@ const Process = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center hover:scale-105 transition-all ease-in-out">
               <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border h-[100%] border-gray-300">
                 <Share className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-rotateIn" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Publish Your BioTree</h3>
@@ -65,7 +65,7 @@ const Process = () => {
             </div>
 
             {/* Step 4 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center hover:scale-105 transition-all ease-in-out">
               <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border h-[100%] border-gray-300">
                 <CheckCircle className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-bounceIn" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Final Review</h3>
