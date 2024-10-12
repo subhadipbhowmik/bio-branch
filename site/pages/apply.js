@@ -3,6 +3,8 @@ import styles from '../styles/apply.module.css';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, googleProvider } from '../config/firebase'; // Adjust the path as necessary
 
 const Apply = () => {
   const router = useRouter();
@@ -46,6 +48,19 @@ const Apply = () => {
       }
     } catch (error) {
       toast.error('An error occurred. Please try again.');
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      toast.success('You are registered successfully with Google');
+      localStorage.setItem('BioTreeToken', user.accessToken); // Store token as needed
+      // Redirect to another page if necessary
+      router.push('/dashboard'); // Adjust the redirection as needed
+    } catch (error) {
+      toast.error('An error occurred during Google login.');
     }
   };
 
@@ -107,8 +122,29 @@ const Apply = () => {
 
               <input type='submit' value='Apply' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
             </form>
-
             <h4 className='text-center pt-3'>Already Have Account? <span className='text-indigo-600'><Link href="/login">Login</Link></span></h4>
+
+            <div className="flex items-center justify-center mt-6">
+              <div className="border-b border-gray-300 w-full" />
+              <p className="text-gray-500 mx-3">Or</p>
+              <div className="border-b border-gray-300 w-full" />
+            </div>
+
+            <div className="flex justify-center items-center">
+              <button
+                onClick={handleGoogleSignIn}
+                className="flex items-center justify-center bg-gray-200 text-gray-700 px-3 py-2 rounded-md mt-3 w-full transition-transform transform hover:bg-indigo-100 focus:outline-none shadow-lg"
+              >
+                <img
+                  src="/svg/google.svg" // Make sure the path is correct
+                  alt="Google"
+                  className="w-5 h-5 mr-2"
+                />
+                Continue with Google
+              </button>
+            </div>
+
+           
           </div>
         </div>
       </section>
