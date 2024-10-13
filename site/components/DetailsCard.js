@@ -1,71 +1,72 @@
-import React from 'react'
-import { Camera, Heart, Home, User, Link, Edit } from 'lucide-react'
+import React from 'react';
+import { Camera, Heart, Home, User, Link, Edit } from 'lucide-react';
 
 const DetailsCard = () => {
   return (
     <section className="py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-4">Features</h2>
+        {/* Features Heading */}
+        <h2 className="text-5xl font-bold text-center mb-8 animate-gradient-text">
+          Features
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          
           {/* Card 1 */}
-          <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(79, 70, 229, 0.6)' }}>
+          <div className="relative card bg-blue-500 text-white rounded-lg p-6 transition-all cursor-pointer">
             <div className="text-4xl mb-4">
               <Camera />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-left">Capture Moments</h3>
-            <p className="text-white text-left">Seamlessly integrate your favorite photo-sharing platforms to easily capture and display your moments. Show your best photos to friends and family in a more structured way.</p>
+            <h3 className="text-xl font-semibold mb-2">Capture Moments</h3>
+            <p>Seamlessly integrate your favorite photo-sharing platforms.</p>
           </div>
-          
+
           {/* Card 2 */}
-          <div className="bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(239, 68, 68, 0.6)' }}>
+          <div className="relative card bg-pink-500 text-white rounded-lg p-6 transition-all cursor-pointer">
             <div className="text-4xl mb-4">
               <Heart />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-left">Stay Connected</h3>
-            <p className="text-white text-left">Add and organize your social media links to stay connected with the people who matter most. Manage all your connections in one easily accessible place.</p>
+            <h3 className="text-xl font-semibold mb-2">Stay Connected</h3>
+            <p>Add and organize your social media links to stay connected.</p>
           </div>
-          
+
           {/* Card 3 */}
-          <div className="bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(45, 212, 191, 0.6)' }}>
+          <div className="relative card bg-green-500 text-white rounded-lg p-6 transition-all cursor-pointer">
             <div className="text-4xl mb-4">
               <Home />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-left">Personal Dashboard</h3>
-            <p className="text-white text-left">Your personalized dashboard helps you manage all your online links in a centralized, customizable place. Gain control of how you present yourself online in an efficient way.</p>
+            <h3 className="text-xl font-semibold mb-2">Personal Dashboard</h3>
+            <p>Manage all your online links in one centralized place.</p>
           </div>
-          
+
           {/* Card 4 */}
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(251, 191, 36, 0.6)' }}>
+          <div className="relative card bg-yellow-500 text-white rounded-lg p-6 transition-all cursor-pointer">
             <div className="text-4xl mb-4">
               <User />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-left">Profile Management</h3>
-            <p className="text-white text-left">Easily manage and update your profiles on multiple platforms. Keep your online presence fresh, consistent, and reflective of your evolving brand or personality.</p>
+            <h3 className="text-xl font-semibold mb-2">Profile Management</h3>
+            <p>Easily manage and update your profiles on multiple platforms.</p>
           </div>
-          
+
           {/* Card 5 */}
-          <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(139, 92, 246, 0.6)' }}>
+          <div className="relative card bg-purple-500 text-white rounded-lg p-6 transition-all cursor-pointer">
             <div className="text-4xl mb-4">
               <Link />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-left">All Links in One Place</h3>
-            <p className="text-white text-left">Organize all your important links in one accessible location. Give others quick access to your online profiles, websites, or portfolios, ensuring everything is easy to find.</p>
+            <h3 className="text-xl font-semibold mb-2">All Links in One Place</h3>
+            <p>Organize all your important links in one accessible location.</p>
           </div>
-          
+
           {/* Card 6 */}
-          <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(236, 72, 153, 0.6)' }}>
+          <div className="relative card bg-pink-600 text-white rounded-lg p-6 transition-all cursor-pointer">
             <div className="text-4xl mb-4">
               <Edit />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-left">Easy Customization</h3>
-            <p className="text-white text-left">Personalize your profile quickly with intuitive and user-friendly customization tools. Tailor your page to reflect your unique style and needs with minimal effort.</p>
+            <h3 className="text-xl font-semibold mb-2">Easy Customization</h3>
+            <p>Quickly customize your profile with intuitive tools.</p>
           </div>
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default DetailsCard
+export default DetailsCard;
