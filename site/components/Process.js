@@ -39,7 +39,7 @@ const Process = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {/* Step 1 */}
             <div className="flex flex-col items-center">
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
+              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
                 <User className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-fadeIn" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Sign Up</h3>
                 <p className="text-gray-600 dark:text-gray-200">Create an account by providing your email address and creating a password.</p>
@@ -48,7 +48,7 @@ const Process = () => {
 
             {/* Step 2 */}
             <div className="flex flex-col items-center">
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
+              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
                 <Edit className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-scaleUp" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Customize Your Profile</h3>
                 <p className="text-gray-600 dark:text-gray-200">Add your social media links and customize your profile's appearance.</p>
@@ -57,7 +57,7 @@ const Process = () => {
 
             {/* Step 3 */}
             <div className="flex flex-col items-center">
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
+              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
                 <Share className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-rotateIn" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Publish Your BioTree</h3>
                 <p className="text-gray-600 dark:text-gray-200">Once you're happy with your profile, publish it and start sharing your links.</p>
@@ -66,7 +66,7 @@ const Process = () => {
 
             {/* Step 4 */}
             <div className="flex flex-col items-center">
-            <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
+              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
                 <CheckCircle className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-bounceIn" />
                 <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Final Review</h3>
                 <p className="text-gray-600 dark:text-gray-200">Review your profile and make any necessary adjustments before finalizing.</p>
