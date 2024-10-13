@@ -9,12 +9,12 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from 'next/script';
 import UserContext from "@/context/userContext";
+import ScrollToTop from "../components/ScrollToTop"; // Import the component
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  // create a blank state object
   const [userData, setUserData] = useState({
     name: '',
     role: '',
@@ -44,27 +44,27 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
-  return(
+  return (
     <>
-    <NavBar/>
-    <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-WYTYXQXVK6`} />
-    <Script strategy="lazyOnload">
-                {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'G-WYTYXQXVK6', {
-                    page_path: window.location.pathname,
-                    });
-                `}
-    </Script>
-    <UserContext.Provider value={{userData, setUserData}}>
-         <Component {...pageProps} />
-    </UserContext.Provider>
-    <ToastContainer />
-    {isLoading && <div className="nprogress-custom-parent"><div className="nprogress-custom-bar"/></div>}
-    <Footer/>
-
+      <NavBar />
+      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-WYTYXQXVK6`} />
+      <Script strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-WYTYXQXVK6', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+      <UserContext.Provider value={{ userData, setUserData }}>
+        <Component {...pageProps} />
+      </UserContext.Provider>
+      <ToastContainer />
+      {isLoading && <div className="nprogress-custom-parent"><div className="nprogress-custom-bar" /></div>}
+      <Footer />
+      <ScrollToTop /> {/* Include the ScrollToTop component */}
     </>
-  ) 
+  );
 }
