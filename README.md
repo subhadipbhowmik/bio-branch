@@ -2,6 +2,17 @@
 
 **BioBranch** is a streamlined and customizable platform that lets you manage and showcase all your social media handles and important links in one place. Inspired by Linktree, BioBranch offers an easy-to-use interface for creating a personal landing page where you can share your online presence with the world.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+### This project is now OFFICIALLY accepted for **GSSoC 2024 Extended** Program:
+
+<div align="center">
+  <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC 2024 Extd" width="80%">
+</div>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## ✨ **Key Features**
 
@@ -11,12 +22,15 @@
 - **📱 Fully Responsive Design**: Whether on mobile, tablet, or desktop, your BioBranch page will always look stunning and accessible.
 - **🔒 Secure & Private**: Your data stays safe with top-notch security and privacy controls, giving you peace of mind while focusing on growth.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🚀 **Live Demo**
 
   ![biobranch](https://github.com/user-attachments/assets/5541328d-1064-4f1a-bfa2-27f47ac3bfe5)
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 🛠️ **Tech Stack**
 
@@ -33,114 +47,37 @@
 ![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?logo=vercel&logoColor=white)
 
 
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ## 👨‍💻 **Getting Started with Contributions** 👩‍💻
 
-We welcome all interested developers to contribute to BioBranch! Whether you're adding features or fixing bugs, your efforts will improve the platform. Follow the steps below to get started:
+We welcome all interested developers to contribute to **BioBranch**! Whether you're adding features or fixing bugs, your efforts will improve the platform. Follow the steps below to get started:
 
-1. **Fork the Repository**:
-   - Go to the repository on GitHub and click "Fork."
-   - In the dropdown, choose "+ Create a new Fork" and click "Create Fork."
----
-   <img width="960" alt="fork" src="https://github.com/user-attachments/assets/80093759-f5cd-41aa-afa7-42126af0a65f">
+1. Fork the repository.
+2. Create a new feature branch
+3. Commit your changes 
+4. Push to the branch 
+5. Open a Pull Request.
 
----
-   <img width="960" alt="create-repo" src="https://github.com/user-attachments/assets/bb1f0393-05e7-401a-b609-f3a1f10645d6">
+We welcome all contributions to improve **BioBranch**! If you'd like to contribute, please follow the [Contributing.md](./CONTRIBUTING.md) to get details on how to get started.
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-2. **Clone the Forked Repository**:
-   - From your forked repo, copy the URL:
-     ```bash
-     https://github.com/<your-username>/bio-branch.git
-     ```
-   - Clone the repository to your local machine:
-     ```bash
-     git clone https://github.com/<your-username>/bio-branch.git
-     cd bio-branch
-     ```
+<div>
+  <h2 align = "center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35">Our Contributors</h2>
+  <div align = "center">
+ <h3>Thank you for contributing to our repository</h3>
 
----
-<img width="960" alt="clone-repo" src="https://github.com/user-attachments/assets/240cf28d-1db4-44ec-bcd4-e5f63c6c576b">
+![Contributors](https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch&v=1)
 
----
-<img width="960" alt="open-in-vs-code" src="https://github.com/user-attachments/assets/5318b5b2-df24-44de-a708-4476bfadad0e">
+### Show some ❤️ by starring this awesome repository!
 
+</div>
 
-3. **Add Remote Upstream**:
-   - Add the original repository as an upstream remote to sync future changes:
-     ```bash
-     git remote add upstream https://github.com/subhadipbhowmik/bio-branch.git
-     ```
-
-4. **Verify Remotes**:
-   - Check that your origin and upstream remotes are set correctly:
-     ```bash
-     git remote -v
-     ```
-
-5. **Sync with Upstream**:
-   - Pull the latest changes from the upstream repository:
-     ```bash
-     git pull upstream main
-     ```
-
-6. **Install Dependencies**:
-   - For backend changes:
-     ```bash
-     cd server
-     npm install
-     npm start
-     ```
-   - For frontend changes:
-     ```bash
-     cd site
-     npm install
-     npm run dev
-     ```
-
-7. **Create a Feature Branch**:
-   - Create a new branch for your changes:
-     ```bash
-     git checkout -b <feature-branch>
-     ```
-
-8. **Make Changes and Track Them**:
-   - After making changes, track them:
-     ```bash
-     git status
-     git diff
-     ```
-
-9. **Commit Your Changes**:
-   - Stage and commit your changes:
-     ```bash
-     git add .
-     git commit -m "Add feature: <description>"
-     ```
-
-10. **Push Your Changes**:
-    - Push your feature branch to your remote repository:
-      ```bash
-      git push -u origin <feature-branch>
-      ```
-
-11. **Create a Pull Request**:
-    - Go to your forked repository, click "Compare & pull request," provide a title and description, and submit the PR.
-
----
-
-🎉 Congratulations! You’ve made a PR to BioBranch. Wait for it to be reviewed and merged by a maintainer.
-
----
-
-## ** Our Contributors **
----
-<a href="https://github.com/subhadipbhowmik/bio-branch/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch" />
-</a>
-
----
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
 ##  **🏆 Contribution Guidelines 📑**
 - Ensure that the code you write follows best practices and is well documented.
@@ -148,7 +85,23 @@ We welcome all interested developers to contribute to BioBranch! Whether you're 
 - Keep your branch updated with the main branch to avoid conflicts.
 - Be clear and concise in your pull request titles and descriptions.
 
----
+<br>
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+## 👥 Team
+
+| ![Shubhadip Bhowmik](https://avatars.githubusercontent.com/u/57017965?v=4&s=80) |
+|:--:|
+| **Shubhadip Bhowmik** <br> <sub>Project Admin</sub> | 
+| [![LinkedIn](https://img.icons8.com/fluency/32/000000/linkedin.png)](https://www.linkedin.com/in/shubhadip-bhowmik/) |
+
+For any inquiries or feedback, please contact. Happy Contributing 🫡
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## **🌟 Show your support ⭐**
 Give this project a ⭐ if you find it engaging and helpful! Feel Free to reach out.
 
