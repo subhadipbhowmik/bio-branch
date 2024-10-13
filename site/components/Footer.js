@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { Apple, Play } from 'lucide-react'
 
-
 const Footer = () => {
   return (
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
@@ -22,19 +21,21 @@ const Footer = () => {
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
 
-        {/* {Right -  Download the App from Part} */}
-        <div className="flex flex-col items-center md:order-3 space-y-4">
-          <h3 className="text-lg font-semibold text-gray-300 uppercase tracking-wider">
-            Download The App From
-          </h3>
-          <div className="flex space-x-6">
-            <Link href="https://play.google.com/store" target="_blank">
-              <Play className="w-10 h-10 text-gray-400 hover:text-blue-500 transition transform hover:scale-110" />
-            </Link>
-            <Link href="https://www.apple.com/app-store/" target="_blank">
-              <Apple className="w-10 h-10 text-gray-400 hover:text-black transition transform hover:scale-110" />
-            </Link>
-          </div>
+        {/* Right Section: Download the App */}
+        <div className="flex space-x-4 md:order-3">
+          <Link href="https://play.google.com/store" target="_blank">
+            <div className="flex items-center px-4 py-2 bg-white text-gray-800 rounded-lg hover:bg-blue-500 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out">
+              <Play className="w-5 h-5 mr-2 transition-transform duration-300 ease-in-out hover:scale-110" />
+              <span className="text-sm font-semibold">Google Play</span>
+            </div>
+          </Link>
+
+          <Link href="https://www.apple.com/app-store/" target="_blank">
+            <div className="flex items-center px-4 py-2 bg-white text-gray-800 rounded-lg hover:bg-blue-500 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out">
+              <Apple className="w-5 h-5 mr-2 transition-transform duration-300 ease-in-out hover:scale-110" />
+              <span className="text-sm font-semibold">App Store</span>
+            </div>
+          </Link>
         </div>
 
         {/* Feature: Contact Us */}
@@ -80,7 +81,6 @@ const Footer = () => {
       <div className="text-center mt-10">
         <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
-
     </footer>
   )
 }
