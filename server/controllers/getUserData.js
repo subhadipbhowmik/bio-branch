@@ -4,7 +4,7 @@ const getUserData = async (req, res) => {
     const handle = req.params.handle;
 
     if (!handle) {
-        return res.json({
+        return res.status(400).json({
             error: 'Handle parameter is required',
             status: 'error'
         });
@@ -14,7 +14,7 @@ const getUserData = async (req, res) => {
         const user = await UserModel.findOne({ handle: handle });
 
         if (!user) {
-            return res.json({
+            return res.status(404).json({
                 error: 'User not found',
                 status: 'error'
             });
@@ -37,7 +37,7 @@ const getUserData = async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        return res.json({
+        return res.status(500).json({
             error: error.message,
             status: 'error'
         });

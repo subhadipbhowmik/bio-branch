@@ -8,13 +8,13 @@ const loadLinks = async (req, res) => {
         const email = decodedTokenMail.email;
         const user = await UserModel.findOne({ email: email });
         const links = user.links;
-        return res.json({
+        return res.status(200).json({
             message: 'found',
             status: 'success',
             links
         })
     } catch (error) {
-        return res.json({
+        return res.status(500).json({
             error: error.message,
             status: 'error'
         })
