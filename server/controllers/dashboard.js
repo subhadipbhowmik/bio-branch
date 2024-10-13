@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const dashboardData = async (req, res) => {
     const { tokenMail } = req.body;
-    console.log(tokenMail);
+    console.log("dashboard data: " + req.body);
     try {
         const decodedTokenMail = jwt.verify(tokenMail, process.env.SECRET_JWT);
         const email = decodedTokenMail.email;

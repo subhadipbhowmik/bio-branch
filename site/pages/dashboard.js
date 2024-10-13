@@ -23,7 +23,8 @@ const Dashboard = () => {
             }),
         };
 
-        fetch('https://bio-branch-server.onrender.com/data/dashboard', options)
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+        fetch(`${baseUrl}/data/dashboard`, options)
         .then((res) => res.json())
         .then((data) => {
             console.log(data); 

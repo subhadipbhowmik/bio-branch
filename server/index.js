@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 const { dashboardData } = require('./controllers/dashboard');
-const { registerUser, loginUser } = require('./controllers/auth');
+const { registerUser,loginUser, loginUserWithGoogle } = require('./controllers/auth');
 const { getUserData } = require('./controllers/getUserData');
 const { saveSocials, saveProfile } = require('./controllers/saveSocials');
 const { loadSocials } = require('./controllers/loadSocials');
@@ -24,6 +24,19 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(err);
     });
 
+
+//initialized Firebase Admin SDK 
+const admin = require('firebase-admin');
+const serviceAccount = require('your-service-account-key');
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+});
+
+console.log("Firebase Admin SDK initialized successfully");
+
+
+
 // Home Route
 app.get('/', (req, res) => {
     res.send('Bio Branch Is Running');
@@ -34,6 +47,7 @@ app.post('/api/register', registerUser);
 
 // Login route -> to login user
 app.post('/api/login', loginUser);
+app.post('/api/google-login', loginUserWithGoogle);
 
 // Dashboard route
 app.post('/data/dashboard', dashboardData);
