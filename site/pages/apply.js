@@ -15,12 +15,43 @@ const Apply = () => {
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
   };
+//password validation function
+  const validatePassword = (password) => {
+    const minLength = 8;
+    const uppercase = /[A-Z]/;
+    const lowercase = /[a-z]/;
+    const number = /[0-9]/;
+    const specialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+    if (password.length < minLength) {
+      return 'Password must be at least 8 characters long.';
+    }
+    if (!uppercase.test(password)) {
+      return 'Password must contain at least one uppercase letter.';
+    }
+    if (!lowercase.test(password)) {
+      return 'Password must contain at least one lowercase letter.';
+    }
+    if (!number.test(password)) {
+      return 'Password must contain at least one number.';
+    }
+    if (!specialChar.test(password)) {
+      return 'Password must contain at least one special character.';
+    }
+    return null;
+  };
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     if (!category) {
       toast.error('Please select a category');
+      return;
+    }
+//validating the password with throwing toasts if required
+    const passwordError = validatePassword(password);
+    if (passwordError) {
+      toast.error(passwordError);
       return;
     }
 
