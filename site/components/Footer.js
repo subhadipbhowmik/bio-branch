@@ -34,38 +34,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Your Company. All rights reserved.
           </p>
         </div>
-        {/* Center Section: App Store Links */}
-        <div className="flex space-x-4 md:order-3">
-          <Link
-            href="https://play.google.com/store"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Play className="w-7 h-7 text-gray-400 hover:text-white transition" />{" "}
-            {/* Reduced icon size */}
-          </Link>
-          <Link
-            href="https://www.apple.com/app-store/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Apple className="w-7 h-7 text-gray-400 hover:text-white transition" />{" "}
-            {/* Reduced icon size */}
-          </Link>
-        </div>
-        {/* Contact Us Section */}
-        <div className="flex flex-col items-start mb-4 md:mb-0">
-          {" "}
-          {/* Reduced margin-bottom */}
-          <h3 className="mb-2 text-lg font-semibold">Contact Us</h3>{" "}
-          {/* Reduced margin-bottom */}
-          <div className="flex flex-col space-y-1">
-            {" "}
-            {/* Reduced space */}
-            <a
-              href="mailto:contact@yourdomain.com"
-              className="text-sm font-semibold hover:underline"
-            >
+
               contact@yourdomain.com
             </a>
             <a
