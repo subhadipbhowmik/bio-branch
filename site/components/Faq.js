@@ -22,7 +22,37 @@ const Faq = () => {
       question: 'Can I customize my BioTree?',
       answer: 'Yes, you can customize the appearance of your BioTree by choosing different themes and layouts.',
       icon: <XCircle className="w-6 h-6 text-red-500" />
-    }
+    },
+    {
+      question: 'What devices does BioTree support?',
+      answer: 'BioTree works seamlessly on both mobile and desktop devices, offering a responsive and user-friendly experience.',
+      icon: <DeviceMobile className="w-6 h-6 text-purple-500" />
+    },
+    {
+      question: 'Can I track the performance of my BioTree links?',
+      answer: 'Yes, BioTree provides analytics on link clicks and visitor insights, helping you track your performance.',
+      icon: <TrendingUp className="w-6 h-6 text-indigo-500" />
+    },
+    {
+      question: 'How do I upgrade to a premium plan?',
+      answer: 'To upgrade, go to your account settings and choose the premium plan that best suits your needs.',
+      icon: <ArrowUpCircle className="w-6 h-6 text-orange-500" />
+    },
+    {
+      question: 'Is my BioTree data secure?',
+      answer: 'We prioritize the security of your data with advanced encryption and regular security audits.',
+      icon: <Shield className="w-6 h-6 text-cyan-500" />
+    },
+    {
+      question: 'Can I integrate other tools with my BioTree?',
+      answer: 'Yes, BioTree allows integration with third-party tools like Google Analytics, Mailchimp, and more.',
+      icon: <PuzzlePiece className="w-6 h-6 text-pink-500" />
+    },
+    {
+      question: 'How do I delete my BioTree account?',
+      answer: 'To delete your account, go to account settings, scroll to the bottom, and click on the "Delete Account" button.',
+      icon: <Trash className="w-6 h-6 text-gray-500" />
+    },
   ];
 
   return (

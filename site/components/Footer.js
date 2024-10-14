@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Left Section: Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="text-2xl font-bold">
-            HireHUB
+            Biotree
           </Link>
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
