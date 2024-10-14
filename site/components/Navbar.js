@@ -43,6 +43,9 @@ const NavBar = () => {
                     <Link href="/apply" className={`block py-2 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 pl-3 pr-4  ${currentRoute === '/apply' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out text-green-500 cursor-default dark:text-white'}`}>Apply</Link>
                 </li>
                 <li>
+                    <Link href="/apply" className={`block py-2 w-fit justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 pl-3 pr-4  ${currentRoute === '/apply' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out text-green-500 cursor-default dark:text-white'}`}>Contributors</Link>
+                </li>
+                <li>
                     <Link href="/login" className={`block py-2 pl-3 pr-4 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 ${currentRoute === '/login' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default text-green-500'}`}>Login</Link>
                 </li>
                 {isLoggedIn && (
