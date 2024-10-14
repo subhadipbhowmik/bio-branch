@@ -1,25 +1,35 @@
+
+name: Bug report
+about: Report any issues with the platform
+title: ""
+labels: ["🐛 bug"]
+assignees: ""
 ---
-name: "🐛 Bug Report"
-about: "Create a report to help us improve"
-title: 'Bug: Write Suitable Title Here'
-labels: 'bug'
----
 
-<!-- Please provide a clear and concise description of what the bug is -->
-## Describe the bug
+Found a bug? Please fill out the sections below. 👍
 
-<!-- Provide Screenshots if any -->
-## Add Screenshots (if Available)
+### Issue Summary
 
-<!-- Exaplin How to reproduce the bug -->
-## Steps To Reproduce
+A summary of the issue. This needs to be a clear detailed-rich summary.
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
+### Steps to Reproduce
 
-<!-- Explain the behavior you observed after following the above steps -->
-## The current behavior
+1. (for example) Went to ...
+2. Clicked on...
+3. ...
 
-<!-- Explain what you expected to happen after following the above steps -->
-## The expected behavior
+Any other relevant information. For example, why do you consider this a bug and what did you expect to happen instead?
+
+### Actual Results
+
+- What's happening right now that is different from what is expected
+
+### Expected Results
+
+- This is an ideal result that the system should get after the tests are performed
+
+### Technical details
+
+- Browser version, screen recording, console logs, network requests.
+- Node.js version
+- Anything else that you think could be an issue.

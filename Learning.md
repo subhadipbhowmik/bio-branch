@@ -98,7 +98,7 @@ npm install
 ```bash
 npm start
 ```
-
+ 
 The server will start running on `http://localhost:5000`.
 
 ### Running the Site

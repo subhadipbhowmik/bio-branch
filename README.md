@@ -14,7 +14,7 @@
 
 ## 🚀 **Live Demo**
 
-- **Live**: [BioBranch](https://biobranch.vercel.app/)  
+  ![biobranch](https://github.com/user-attachments/assets/5541328d-1064-4f1a-bfa2-27f47ac3bfe5)
 
 ---
 
@@ -37,131 +37,108 @@
 
 ## 👨‍💻 **Getting Started with Contributions** 👩‍💻
 
--  We welcome all interested developers to contribute in improving BioBranch and start building your own BioBranch profile to simplify the way you share your digital footprint! Whether you're adding features or fixing bugs, your contributions will make this project better.
--  Follow the steps below to get started:-
+We welcome all interested developers to contribute to BioBranch! Whether you're adding features or fixing bugs, your efforts will improve the platform. Follow the steps below to get started:
 
 1. **Fork the Repository**:
-   - Go to the repository on GitHub and click the "Fork" button.
-      - <i>Dropdown menu --> "+ Create a new Fork" </i>
-      
-      ![step1](https://github.com/user-attachments/assets/d9e82970-f403-41bf-b4b6-cc3052616b3e)
-     
-      - <i>Dont change the suggested repo name and just click on "Create Fork" button.</i>
-      
-      ![biobranch](https://github.com/user-attachments/assets/d57fe9a8-09ca-4a8e-9541-e58bcf127aa4)
-   
-      - <i> Congratulations! 🎊 you have successfully created a copy of our repo!🎊</i>
+   - Go to the repository on GitHub and click "Fork."
+   - In the dropdown, choose "+ Create a new Fork" and click "Create Fork."
+---
+   <img width="960" alt="fork" src="https://github.com/user-attachments/assets/80093759-f5cd-41aa-afa7-42126af0a65f">
+
+---
+   <img width="960" alt="create-repo" src="https://github.com/user-attachments/assets/bb1f0393-05e7-401a-b609-f3a1f10645d6">
 
 
-2. **Now, from your forked repo, click on the "<> code" button and copy the url**:
-   
-   - the forked url looks like this
-     
-     
-   ```bash
-    https://github.com/<your  username>/bio-branch.git
-   ```
-   
-  ![biob2](https://github.com/user-attachments/assets/4a32f255-bd8f-42a1-b79e-3588ccf7a5ac)
+2. **Clone the Forked Repository**:
+   - From your forked repo, copy the URL:
+     ```bash
+     https://github.com/<your-username>/bio-branch.git
+     ```
+   - Clone the repository to your local machine:
+     ```bash
+     git clone https://github.com/<your-username>/bio-branch.git
+     cd bio-branch
+     ```
+
+---
+<img width="960" alt="clone-repo" src="https://github.com/user-attachments/assets/240cf28d-1db4-44ec-bcd4-e5f63c6c576b">
+
+---
+<img width="960" alt="open-in-vs-code" src="https://github.com/user-attachments/assets/5318b5b2-df24-44de-a708-4476bfadad0e">
 
 
-3. **Open your IDE(Visual studio code or other), paste the above url in vs code terminal or git bash and navigate into the directory**:
-   ```bash
-    git clone https://github.com/<your  username>/bio-branch.git
-    cd bio-branch
-   ```
-   
-    ![bb3](https://github.com/user-attachments/assets/7bcd6d4c-0235-4472-8d46-d67f3c4f6739)
-   
-    ![bb2](https://github.com/user-attachments/assets/48069088-1373-4ff8-9c25-00fa4cfcf0ff)
+3. **Add Remote Upstream**:
+   - Add the original repository as an upstream remote to sync future changes:
+     ```bash
+     git remote add upstream https://github.com/subhadipbhowmik/bio-branch.git
+     ```
 
-   
-4. **Add a Remote upstream to original repo for reference**:
-   
-- In this way, you can feasibly update your forked repo with the original repo changes. Ensure you execute this cmd in the "bio-branch" directory
-  
-   ```bash
-   git remote add upstream https://github.com/subhadipbhowmik/bio-branch.git
-   
+4. **Verify Remotes**:
+   - Check that your origin and upstream remotes are set correctly:
+     ```bash
+     git remote -v
+     ```
 
-5. **Verify remote origin and upstream**:
-   
-   ```bash
-   git remote -v
-   
-  -  the following response appear:
-  ```bash
-   origin  https://github.com/<your username>/bio-branch.git (fetch)
-   origin  https://github.com/<your username>/bio-branch.git (push)
-  upstream https://github.com/subhadipbhowmik/bio-branch.git (fetch)
-  upstream https://github.com/subhadipbhowmik/bio-branch.git (push) 
-```
+5. **Sync with Upstream**:
+   - Pull the latest changes from the upstream repository:
+     ```bash
+     git pull upstream main
+     ```
 
-6. **Always make a pull from the upstream repository to your main branch to keep it updated with the original repository.**
-   -  Ensure you are in the main bio-branch directory
-   ```bash
-   git pull upstream main
-   
-7. **Install the dependencies**:
-   
+6. **Install Dependencies**:
+   - For backend changes:
+     ```bash
+     cd server
+     npm install
+     npm start
+     ```
+   - For frontend changes:
+     ```bash
+     cd site
+     npm install
+     npm run dev
+     ```
 
-- Backend changes:
-  ```bash
-   cd server
-   npm install / yarn start
-   npm start
-  
-- Now-
-  
-   <code>Server is running at http://localhost:4000</code>
+7. **Create a Feature Branch**:
+   - Create a new branch for your changes:
+     ```bash
+     git checkout -b <feature-branch>
+     ```
 
-- Frontend changes:
-  ```bash
-  cd site
-  npm install
-  npm run dev
-  # or
-  yarn dev
-  # or
-  pnpm dev
-  
-- Now, the frontend is running locally-
-  
-  <code>ready - started server on 0.0.0.0:3000, url: http://localhost:3000</code>
-  You can start editing the page by modifying pages/index.js. The page auto-updates as you edit the file.
-   
-8. **Create a new branch**:
-   
-   ```bash
-   git checkout -b <feature-branch>
+8. **Make Changes and Track Them**:
+   - After making changes, track them:
+     ```bash
+     git status
+     git diff
+     ```
 
-9. **Work on the issue**:
-- Perform the proposed changes in your new branch and ensure everything works.
+9. **Commit Your Changes**:
+   - Stage and commit your changes:
+     ```bash
+     git add .
+     git commit -m "Add feature: <description>"
+     ```
 
-10. **Track your changes**:
-    
-    ```bash
-    git status
-    git diff
+10. **Push Your Changes**:
+    - Push your feature branch to your remote repository:
+      ```bash
+      git push -u origin <feature-branch>
+      ```
 
-11. **Stage and Commit your changes**:
-   ```bash
-   git add .
-   git commit -m "Add feature: <description>"
-```
+11. **Create a Pull Request**:
+    - Go to your forked repository, click "Compare & pull request," provide a title and description, and submit the PR.
 
-12. **Ensure you push the committed changes in your feature branch to your own remote repository**
-    ```bash
-    git push -u origin <feature-branch>
-
-13. **Next, create a Pull Request**
-    - Go to your forked repository on GitHub, click "Compare & pull request."
-    - Provide a descriptive title and summary for your PR.
-    - Click on "Create pull request" to submit your PR for review!
-      
 ---
 
-- 🎇 Hurray!🎉, you have made a PR to the BioBranch. Sit back and wait for your submission to be accepted and your PR to be merged by a maintainer.
+🎉 Congratulations! You’ve made a PR to BioBranch. Wait for it to be reviewed and merged by a maintainer.
+
+---
+
+## ** Our Contributors **
+---
+<a href="https://github.com/subhadipbhowmik/bio-branch/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=subhadipbhowmik/bio-branch" />
+</a>
 
 ---
 
