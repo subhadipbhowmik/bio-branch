@@ -31,10 +31,13 @@ const Footer = () => {
             HireHUB
           </Link>
           <p className="text-sm text-gray-400 mt-1">
-            &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+            &copy; {new Date().getFullYear()} HireHub. All rights reserved.
           </p>
         </div>
-
+             <a
+  href="mailto:contact@yourdomain.com"
+  className="text-sm font-semibold hover:underline"
+>
               contact@yourdomain.com
             </a>
             <a
@@ -110,7 +113,7 @@ const Footer = () => {
         {" "}
         {/* Reduced margin-top */}
         <p className="text-sm">
-          &copy; 2024 Shubhadip Bhowmik. All rights reserved.
+          &copy; 2024 HireHub. All rights reserved.
         </p>
       </div>
     </footer>
