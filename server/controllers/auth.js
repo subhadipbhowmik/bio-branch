@@ -18,7 +18,7 @@ const registerUser = async (req, res) => {
     
         const token = jwt.sign({ email: email }, process.env.SECRET_JWT);
     
-        return res.json({
+        return res.status(201).json({
             message: 'User Created',
             status: 'success',
             token: token,
@@ -26,7 +26,7 @@ const registerUser = async (req, res) => {
         });
     } catch (error) {
         if (error.code === 11000) {
-            return res.json({
+            return res.status(400).json({
                 message: 'Try different handle or email',
                 status: 'error'
             });
@@ -43,14 +43,14 @@ const loginUser = async (req, res) => {
     try {
         const user = await UserModel.findOne({ email: email, password: password });
         if (!user) {
-            return res.json({
+            return res.status(404).json({
                 status: 'notfound',
                 error: 'No user found'
             });
         }
 
         const token = jwt.sign({ email: email }, process.env.SECRET_JWT);
-        return res.json({
+        return res.status(200).json({
             message: 'User found',
             status: 'success',
             token: token,
