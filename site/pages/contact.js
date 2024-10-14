@@ -13,7 +13,6 @@ const Contact = () => {
 
   const handleRequestCall = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     toast.success('Request for a call submitted!');
     setFirstName('');
     setLastName('');
@@ -25,7 +24,6 @@ const Contact = () => {
 
   const handleFeedbackSubmit = (e) => {
     e.preventDefault();
-    // Handle feedback submission logic here
     toast.success('Feedback submitted!');
     setFeedback(''); // Clear feedback input
   };
@@ -35,9 +33,8 @@ const Contact = () => {
       <h2 className="text-2xl font-bold text-center mb-6">
         How would you like to contact Bio-branch?
       </h2>
-      <div className="flex justify-center gap-6"> {/* Center the boxes with gap */}
-        {/* Request a Call Box */}
-        <div className={`${styles.box} w-1/3 p-4`}>
+      <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6"> 
+        <div className={`${styles.box} w-full md:w-1/3 p-4`}> 
           <h3 className="font-semibold text-xl mb-4">Request a Call</h3>
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
@@ -93,8 +90,7 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* Support and Feedback Box */}
-        <div className="w-1/3 flex flex-col gap-4">
+        <div className="w-full md:w-1/3 flex flex-col gap-4">
           <div className={`${styles.box} p-7 mb-5`}>
             <h3 className="font-semibold text-xl mb-4">Support</h3>
             <p>Phone: (123) 456-7890</p>

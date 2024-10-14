@@ -36,6 +36,11 @@ const Login = () => {
       .catch(error => toast.error("An error occurred. Please try again."));
 
   }
+
+  const [show,setShow]=useState(false)
+  const handleLockIcon=()=>{
+    setShow(!show)
+  }
   return (
     <>
       <section className={styles.background + " min-h-screen flex justify-center items-center"}>
@@ -49,8 +54,8 @@ const Login = () => {
                 <input className='px-3 rounded-md focus:outline-none' placeholder='Add Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </span>
               <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <img className='w-7 mr-2' src="/svg/password.png" alt="" />
-                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                <img className='w-7 mr-2' onClick={()=>handleLockIcon()} src={show ? "/svg/view.png":"/svg/hide.png"} alt="" />
+                <input className='px-3 rounded-md focus:outline-none' placeholder='Add Password' type={show ?"text":"password"} value={password} onChange={(e) => setPassword(e.target.value)} required/>
               </span>
 
               <input type='submit' value='Login' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
