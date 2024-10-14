@@ -11,13 +11,13 @@ const saveSocials = async(req, res) => {
         user.socialMedia = socials;
         await user.save();
 
-        return res.json({
+        return res.status(200).json({
             message: 'saved', 
             status: 'success'
         })
 
     } catch (error) {
-        return res.json({
+        return res.status(500).json({
             error: error.message,
             status: 'error'
         })
@@ -39,7 +39,7 @@ const saveProfile = async(req, res) => {
         
         await user.save();
 
-        return res.json({
+        return res.status(200).json({
             message: 'saved', 
             status: 'success'
         })
