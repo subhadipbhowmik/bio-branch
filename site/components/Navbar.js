@@ -29,7 +29,7 @@ const NavBar = () => {
             <div className={`${mobileMenuOpen ? "" : "hidden"} w-full md:block md:w-auto focus:outline-none`} id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 
-            <li  >
+            <li >
                 <Link href="/" className={`w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 block py-2 pl-3 pr-4  ${currentRoute === '/' ? '  text-red-500 ' : 'text-green-500 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default '}`}>Home</Link>
                 </li>
                 <li>
@@ -40,23 +40,9 @@ const NavBar = () => {
                 </li>
                 <li>
                 <Link href="/dashboard" className={`block py-2 pl-3 pr-4  ${currentRoute === '/dashboard' ? ' text-red-500  bg-blue-700 md:bg-transparent dark:text-blue-500' : ' w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500 '}`}>Dashboard</Link>
- 
-                <li>
-                <Link href="/" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Home</Link>
-                </li>
-                <li>
-                <Link href="/apply" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/apply' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Apply</Link>
-                </li>
-                
-                <li>
-                <Link href="/dashboard" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/dashboard' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Dashboard</Link>
- 
                 </li>
                 <li>
                 <Link href="/contact" className={`block py-2 pl-3 pr-4  ${currentRoute === '/contact' ? ' text-red-500   md:bg-transparent dark:text-blue-500' : ' w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500 '}`}>Contact Us</Link>
-                </li>
-                <li>
-                <Link href="/login" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/login' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Login</Link>
                 </li>
             </ul>
             </div>

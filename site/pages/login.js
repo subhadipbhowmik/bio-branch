@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styles from '../styles/apply.module.css'
+import React, { useState } from 'react';
+import styles from '../styles/apply.module.css';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,7 +18,7 @@ const Login = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ email, password }),
-    }
+    };
 
     // backend implementations
     fetch('https://bio-branch-server.onrender.com/api/login', options)
@@ -34,8 +34,13 @@ const Login = () => {
         }
       })
       .catch(error => toast.error("An error occurred. Please try again."));
+  };
 
-  }
+  // Google login function
+  const googleLogin = () => {
+    window.location.href = 'http://localhost:4000/auth/google';
+  };
+
   return (
     <>
       <section className={styles.background + " min-h-screen flex justify-center items-center"}>
@@ -55,12 +60,19 @@ const Login = () => {
 
               <input type='submit' value='Login' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
             </form>
+
+            <div className='flex justify-center mt-3'>
+              <button onClick={googleLogin} className='bg-red-500 text-white px-3 py-2 rounded-md'>
+                Sign in with Google
+              </button>
+            </div>
+
             <h4 className='text-center pt-3'>New here? <span className='text-indigo-600'><Link href="/apply">Register</Link></span></h4>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
