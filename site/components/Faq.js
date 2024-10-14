@@ -31,54 +31,55 @@ const faqData = [
 const FaqItem = ({ faq }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  return (
-    <div className="mb-4">
-      <motion.div
-        className="bg-white rounded-lg shadow-lg overflow-hidden"
-        initial={false}
-        animate={{ backgroundColor: isOpen ? '#F0F9FF' : '#FFFFFF' }}
-        transition={{ duration: 0.3 }}
-      >
-        <button
-          className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <div className="flex items-center space-x-4">
-            <div className="flex-shrink-0">
-              {faq.icon}
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800">{faq.question}</h3>
-          </div>
-          <motion.div
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <IoIosArrowDown className="w-6 h-6 text-blue-500" />
-          </motion.div>
-        </button>
-        <AnimatePresence initial={false}>
-          {isOpen && (
-            <motion.div
-              key="content"
-              initial="collapsed"
-              animate="open"
-              exit="collapsed"
-              variants={{
-                open: { opacity: 1, height: "auto" },
-                collapsed: { opacity: 0, height: 0 }
-              }}
-              transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+   return (
+    <div className="max-w-4xl mx-auto py-12 px-6">
+      <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {faqData.map((faq, index) => {
+          return (
+            <div 
+              key={index} 
+              className="bg-white rounded-lg shadow-md p-6 flex flex-col space-y-4 transition-transform transform hover:scale-105 hover:shadow-lg"
             >
-              <div className="px-6 pb-4">
-                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+              <div className="flex items-start space-x-4" onClick={() => setIsOpen(!isOpen)}>
+                <div className="flex-shrink-0">
+                  {faq.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800 flex-grow">{faq.question}</h3>
+                <motion.div
+                  animate={{ rotate: isOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <IoIosArrowDown className="w-6 h-6 text-blue-500" />
+                </motion.div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
+              
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key="content"
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    variants={{
+                      open: { opacity: 1, height: "auto" },
+                      collapsed: { opacity: 0, height: 0 }
+                    }}
+                    transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                  >
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default function FAQ() {
   return (
