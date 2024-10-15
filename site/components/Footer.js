@@ -21,16 +21,22 @@ const Footer = () => {
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
 
-        {/* Center Section: App Store Links (Optional) */}
+        {/* Right Section: Download the App */}
         <div className="flex space-x-4 md:order-3">
           <Link href="https://play.google.com/store" target="_blank">
-            <Play className="w-8 h-8 text-gray-400 hover:text-white transition" />
+            <div className="flex items-center px-4 py-2 bg-white text-gray-800 rounded-lg hover:bg-blue-500 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out">
+              <Play className="w-5 h-5 mr-2 transition-transform duration-300 ease-in-out hover:scale-110" />
+              <span className="text-sm font-semibold">Google Play</span>
+            </div>
           </Link>
+
           <Link href="https://www.apple.com/app-store/" target="_blank">
-            <Apple className="w-8 h-8 text-gray-400 hover:text-white transition" />
+            <div className="flex items-center px-4 py-2 bg-white text-gray-800 rounded-lg hover:bg-blue-500 hover:text-white hover:shadow-xl transition-all duration-300 ease-in-out">
+              <Apple className="w-5 h-5 mr-2 transition-transform duration-300 ease-in-out hover:scale-110" />
+              <span className="text-sm font-semibold">App Store</span>
+            </div>
           </Link>
         </div>
-
 
         {/* Feature: Contact Us */}
         <div className="flex flex-col items-start mb-6 md:mb-0">
@@ -138,8 +144,7 @@ const Footer = () => {
       <div className="text-center mt-10">
         <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
-
-    </footer >
+    </footer>
   )
 }
 
