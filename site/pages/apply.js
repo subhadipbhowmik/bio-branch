@@ -72,7 +72,6 @@ const Apply = () => {
                 <input
                  className='focus:outline-none'
                   placeholder='Add Email'
-                  className="focus:outline-none"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -88,7 +87,6 @@ const Apply = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="focus:outline-none"
                   required
                 />
               </span>
