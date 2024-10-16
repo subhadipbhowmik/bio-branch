@@ -14,6 +14,46 @@
 <!--Line-->
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
+# Contributing Guidelines
+
+Welcome to Hacktoberfest 2024! 🎉 We're excited to help beginners make their first successful pull request and contribute to open source.
+
+
+## Eligibility Criteria 🚫
+
+- No duplicate programming questions.
+- **Star** and **Fork** this repository.
+- Complete the `data.json` file after your task.
+
+## How to Contribute
+
+1. **Star this Repository**: Hacktoberfest-2024. (`Important`)
+2. **Fork the Repository**.
+3. **Clone Your Fork**:
+   ```bash
+   git clone https://github.com/<your-github-username>/Hacktoberfest-2024
+   cd Hacktoberfest-2024
+   ```
+4. **Create a New Branch**:
+   ```bash
+   git checkout -b <your_branch_name>
+   ```
+5. **Make Changes**: 
+   - Stage and commit:
+   ```bash
+   git add -A
+   git commit -m "<your_commit_message>"
+   ```
+6. **Push Your Changes**:
+   ```bash
+   git push -u origin <your_branch_name>
+   ```
+
+Congratulations! 🎉 You've contributed to Hacktoberfest 2024!
+
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
 ## ✨ **Key Features**
 
 - **🎨 Customizable Profiles**: Personalize your BioBranch page with themes, colors, and styles that perfectly match your brand's vibe.
