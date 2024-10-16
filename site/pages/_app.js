@@ -9,6 +9,7 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from 'next/script';
 import UserContext from "@/context/userContext";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -44,9 +45,12 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
+
+
   return(
     <>
     <NavBar/>
+    <DarkModeToggle />
     <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-WYTYXQXVK6`} />
     <Script strategy="lazyOnload">
                 {`
