@@ -56,10 +56,10 @@ const NavBar = () => {
                             <li>
                                 <Link
                                     href="/"
-                                    className={`w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 block py-2 pl-3 pr-4  ${
+                                    className={`w-[70px] justify-center text-center rounded-full hover:text-white hover:bg-green-400 block py-2 pl-3 pr-4 ${
                                         currentRoute === '/'
                                             ? 'text-red-500'
-                                            : 'text-green-500 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default'
+                                            : 'text-green-500 dark:text-white'
                                     }`}
                                 >
                                     Home
@@ -68,10 +68,10 @@ const NavBar = () => {
                             <li>
                                 <Link
                                     href="/apply"
-                                    className={`block py-2 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 pl-3 pr-4 ${
+                                    className={`w-[70px] justify-center text-center rounded-full hover:text-white hover:bg-green-400 block py-2 pl-3 pr-4 ${
                                         currentRoute === '/apply'
                                             ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500'
-                                            : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out text-green-500 cursor-default dark:text-white'
+                                            : 'text-green-500 dark:text-white'
                                     }`}
                                 >
                                     Apply
@@ -80,10 +80,10 @@ const NavBar = () => {
                             <li>
                                 <Link
                                     href="/login"
-                                    className={`block py-2 pl-3 pr-4 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 ${
+                                    className={`w-[70px] justify-center text-center rounded-full hover:text-white hover:bg-green-400 block py-2 pl-3 pr-4 ${
                                         currentRoute === '/login'
                                             ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500'
-                                            : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default text-green-500'
+                                            : 'text-green-500 dark:text-white'
                                     }`}
                                 >
                                     Login
@@ -92,10 +92,10 @@ const NavBar = () => {
                             <li>
                                 <Link
                                     href="/dashboard"
-                                    className={`block py-2 pl-3 pr-4 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 ${
+                                    className={`w-[100%] justify-center text-center rounded-full hover:text-white hover:bg-green-400 block py-2 pl-3 pr-4 ${
                                         currentRoute === '/dashboard'
                                             ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500'
-                                            : 'text-green-500 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default'
+                                            : 'text-green-500 dark:text-white'
                                     }`}
                                 >
                                     Dashboard
@@ -104,10 +104,10 @@ const NavBar = () => {
                             <li>
                                 <Link
                                     href="/contact"
-                                    className={`block py-2 pl-3 pr-4 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 ${
+                                    className={`w-[100%] justify-center text-center rounded-full hover:text-white hover:bg-green-400 block py-2 pl-3 pr-4 ${
                                         currentRoute === '/contact'
-                                            ? 'text-red-500 md:bg-transparent dark:text-blue-500'
-                                            : 'text-green-500 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default'
+                                            ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500'
+                                            : 'text-green-500 dark:text-white'
                                     }`}
                                 >
                                     Contact Us
