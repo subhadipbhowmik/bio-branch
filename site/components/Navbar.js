@@ -51,7 +51,25 @@ const NavBar = () => {
                     </li>
                 )}
                 <li>
-                    <Link href="/contact" className={`block py-2 pl-3 pr-4 ${currentRoute === '/contact' ? 'text-red-500 md:bg-transparent dark:text-blue-500' : 'w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500'}`}>Contact Us</Link>
+                <Link href="/dashboard" className={`block py-2 pl-3 pr-4  ${currentRoute === '/dashboard' ? ' text-red-500  bg-blue-700 md:bg-transparent dark:text-blue-500' : ' w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500 '}`}>Dashboard</Link>
+                </li>
+ 
+                <li>
+                <Link href="/" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Home</Link>
+                </li>
+                <li>
+                <Link href="/apply" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/apply' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Apply</Link>
+                </li>
+                
+                <li>
+                <Link href="/dashboard" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/dashboard' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Dashboard</Link>
+ 
+                </li>
+                <li>
+                <Link href="/contact" className={`block py-2 pl-3 pr-4  ${currentRoute === '/contact' ? ' text-red-500   md:bg-transparent dark:text-blue-500' : ' w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500 '}`}>Contact Us</Link>
+                </li>
+                <li>
+                <Link href="/login" className={`block py-2 pl-3 pr-4 rounded md:p-0 ${currentRoute === '/login' ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'}`}>Login</Link>
                 </li>
             </ul>
             </div>
