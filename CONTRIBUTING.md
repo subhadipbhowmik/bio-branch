@@ -73,7 +73,8 @@ Thank you for your interest in contributing to BioBranch! This guide will help y
      npm install
      npm start
      ```
-   - For frontend changes:
+   - For frontend changes:cd server
+   
      ```bash
      cd site
      npm install
