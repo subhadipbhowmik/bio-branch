@@ -12,7 +12,7 @@ export default function Component() {
   const [errors, setErrors] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
 
-  //validating the different fields of the form
+  // Validating the form fields
   const validateForm = () => {
     let isValid = true;
     const newErrors = { email: "", password: "" };
@@ -37,7 +37,7 @@ export default function Component() {
     return isValid;
   };
 
-  // logging the user
+  // Login function
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -73,6 +73,11 @@ export default function Component() {
     }
   };
 
+  // Google login function
+  const googleLogin = () => {
+    window.location.href = "http://localhost:4000/auth/google";
+  };
+
   const Images = [
     "https://subhadipbhowmik.github.io/shubhadipbhowmik/images/uday.jpg",
     "https://subhadipbhowmik.github.io/shubhadipbhowmik/images/daliya.png",
@@ -80,14 +85,13 @@ export default function Component() {
   ];
 
   return (
-    <div className=" flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">
+    <div className="flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">
       <div className="w-full md:m-16 max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div className="md:w-1/2 bg-gradient-to-br from-blue-500 to-purple-600 p-12 text-white flex flex-col justify-between">
           <div>
             <h2 className="text-4xl font-bold mb-6">Welcome Back!</h2>
             <p className="text-xl mb-8">
-              Connect with thousands of inspiring creators and showcase your
-              talent.
+              Connect with thousands of inspiring creators and showcase your talent.
             </p>
           </div>
           <div className="space-y-4">
@@ -179,10 +183,18 @@ export default function Component() {
                   Logging In...
                 </span>
               ) : (
-                "Login In"
+                "Log In"
               )}
             </button>
           </form>
+          <div className="flex justify-center mt-3">
+            <button
+              onClick={googleLogin}
+              className="bg-red-500 text-white py-2 px-4 rounded-md"
+            >
+              Sign in with Google
+            </button>
+          </div>
           <p className="mt-8 text-center text-sm text-gray-600">
             New to Biotree?{" "}
             <Link
