@@ -6,14 +6,21 @@ const NavBar = () => {
     const router = useRouter();
     const currentRoute = router.pathname;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-    const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
-    };
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         setMobileMenuOpen(false);
     }, [router.asPath]);
+
+    useEffect(() => {
+        // Check if the user is logged in by looking for the token in localStorage
+        const token = localStorage.getItem('BioTreeToken');
+        setIsLoggedIn(!!token); // Set isLoggedIn to true if token exists
+    }, []);
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
 
     return (
         <>    
@@ -75,19 +82,20 @@ const NavBar = () => {
                                     Apply
                                 </Link>
                             </li>
-                           
-                            <li>
-                                <Link
-                                    href="/dashboard"
-                                    className={`block py-2 pl-3 pr-4 ${
-                                        currentRoute === '/dashboard'
-                                            ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500'
-                                            : 'w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500'
-                                    }`}
-                                >
-                                    Dashboard
-                                </Link>
-                            </li>
+                            {isLoggedIn && (
+                                <li>
+                                    <Link
+                                        href="/dashboard"
+                                        className={`block py-2 pl-3 pr-4 rounded md:p-0 ${
+                                            currentRoute === '/dashboard'
+                                                ? 'text-blue-700 bg-blue-700 md:bg-transparent dark:text-blue-500'
+                                                : 'text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700'
+                                        }`}
+                                    >
+                                        Dashboard
+                                    </Link>
+                                </li>
+                            )}
                             <li>
                                 <Link
                                     href="/contact"
