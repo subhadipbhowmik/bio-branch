@@ -21,7 +21,7 @@ const Footer = () => {
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
 
-        {/* Center Section: App Store Links (Optional) */}
+           {/* Center Section: App Store Links (Optional) */}
         <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 space-x-0 md:space-x-4 md:order-3 p-4 bg-black-800 rounded-lg">
      <div className="flex space-x-4">
     <Link href="https://play.google.com/store" target="_blank">
@@ -67,7 +67,6 @@ const Footer = () => {
     </Link>
   </div>
 </div>
-
 
 
 {/* Feature: Contact Us */}
