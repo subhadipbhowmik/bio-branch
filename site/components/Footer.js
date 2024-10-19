@@ -16,7 +16,7 @@ const Footer = () => {
         {/* Left Section: Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="text-2xl font-bold">
-            HireHUB
+            HireHUB 
           </Link>
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
@@ -91,8 +91,8 @@ const Footer = () => {
 
         {/* Right Section: Social Media Links */}
         <div className="flex space-x-6 md:order-2">
-
-
+  
+       
           <Link href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter" className="text-gray-400 hover:text-blue-400 transition">
           <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M21.72,0H2.28A2.28,2.28,0,0,0,0,2.28V21.72A2.28,2.28,0,0,0,2.28,24H21.72A2.28,2.28,0,0,0,24,21.72V2.28A2.28,2.28,0,0,0,21.72,0Zm-4.73,17.09h-1.87l-2.89-4.46-2.91,4.46H7.46L11,12,7.69,6.91h1.88l2.6,4.14L14.79,6.91h1.89L13.5,12Z" />
@@ -119,7 +119,7 @@ const Footer = () => {
       <div className="text-center mt-10">
         <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
-
+      
     </footer>
   )
 }
