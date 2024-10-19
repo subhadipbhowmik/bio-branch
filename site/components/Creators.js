@@ -14,7 +14,7 @@ const Creators = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center px-10 py-12 bg-gray-50 rounded-lg shadow-lg">
+    <div className="flex flex-col items-center px-10 mt-16 py-12 bg-gray-50 rounded-lg shadow-lg">
       {/* Title */}
       <h1 className="mb-6 text-center font-extrabold text-3xl text-gray-800 leading-tight">
         Join Thousands of Inspiring Creators
