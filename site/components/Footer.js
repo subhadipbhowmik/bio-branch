@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Apple, Play } from 'lucide-react'
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
 
@@ -18,7 +19,7 @@ const Footer = () => {
           <Link href="/" className="text-2xl font-bold">
             HireHUB
           </Link>
-          <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+          <p className="text-sm text-gray-400 mt-2">&copy; {currentYear} Your Company. All rights reserved.</p>
         </div>
 
         {/* Right Section: Download the App */}
@@ -79,7 +80,7 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="text-center mt-10">
-        <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
+        <p className="text-sm">&copy; {currentYear} Shubhadip Bhowmik. All rights reserved.</p>
       </div>
     </footer>
   )
