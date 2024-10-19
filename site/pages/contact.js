@@ -87,7 +87,7 @@ const Contact = () => {
               className="border rounded p-2"
               required
             />
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+            <button type="submit" className="bg-blue-500 hover:bg-blue-700 transition-all text-white p-2 rounded">
               Submit
             </button>
           </form>
@@ -111,7 +111,7 @@ const Contact = () => {
                 className="border rounded p-2 w-full"
                 required
               />
-              <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-2">
+              <button type="submit" className="bg-blue-500 hover:bg-blue-700 transition-all text-white p-2 rounded mt-2">
                 Submit Feedback
               </button>
             </form>

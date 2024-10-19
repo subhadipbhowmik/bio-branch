@@ -1,6 +1,6 @@
 .background {
-    position: relative;
-    background-image: url('/images/earth.jpg');
+  position: relative;
+  background-image: url("/images/earth.jpg");
 }
 
 .borderr:focus {
@@ -9,18 +9,17 @@
 }
 
 .background::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-
 @media screen and (max-width: 768px) {
-    .background {
-        background-image: url('/images/earth.jpg');
-    }
+  .background {
+    background-image: url("/images/earth.jpg");
+  }
 }

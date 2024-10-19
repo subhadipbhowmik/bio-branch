@@ -58,16 +58,16 @@ const Login = () => {
                 <input className='px-3 rounded-md focus:outline-none' placeholder='Add Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
               </span>
 
-              <input type='submit' value='Login' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
+              <input type='submit' value='Login' className='bg-blue-500 hover:bg-blue-700 transition-all cursor-pointer text-white px-3 py-2 rounded-md' />
             </form>
 
             <div className='flex justify-center mt-3'>
-              <button onClick={googleLogin} className='bg-red-500 text-white px-3 py-2 rounded-md'>
+              <button onClick={googleLogin} className='bg-red-500 hover:bg-red-700 transition-all text-white px-3 py-2 rounded-md'>
                 Sign in with Google
               </button>
             </div>
 
-            <h4 className='text-center pt-3'>New here? <span className='text-indigo-600'><Link href="/apply">Register</Link></span></h4>
+            <h4 className='text-center pt-3'>New here? <span className='text-indigo-600 hover:text-indigo-800 transition-all'><Link href="/apply">Register</Link></span></h4>
           </div>
         </div>
       </section>

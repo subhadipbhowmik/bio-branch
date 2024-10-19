@@ -107,10 +107,10 @@ const Apply = () => {
                 </label>
               </span>
 
-              <input type='submit' value='Apply' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
+              <input type='submit' value='Apply' className='cursor-pointer bg-blue-500 hover:bg-blue-700 transition-all text-white px-3 py-2 rounded-md' />
             </form>
 
-            <h4 className='text-center pt-3'>Already Have Account? <span className='text-indigo-600'><Link href="/login">Login</Link></span></h4>
+            <h4 className='text-center pt-3'>Already Have Account? <span className='text-indigo-600 hover:text-indigo-800 transition-all'><Link href="/login">Login</Link></span></h4>
           </div>
         </div>
       </section>
