@@ -7,7 +7,7 @@ const Footer = () => {
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
 
       {/* Wave Effect (You can add SVG wave here for a design touch) */}
-      <svg className="absolute top-0 left-0 right-0 -mt-1 h-8 " viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+      <svg className="absolute top-0 left-0 right-0 -mt-1 h-8" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
         <path fill="#1a202c" fillOpacity="1" d="M0,224L48,208C96,192,192,160,288,160C384,160,480,192,576,186.7C672,181,768,139,864,133.3C960,128,1056,160,1152,176C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
       </svg>
 
@@ -16,13 +16,13 @@ const Footer = () => {
         {/* Left Section: Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="text-2xl font-bold">
-            HireHUB 
+            HireHUB
           </Link>
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
 
-           {/* Center Section: App Store Links (Optional) */}
-        <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 space-x-0 md:space-x-4 md:order-3 p-4 bg-black-800 rounded-lg">
+         {/* Center Section: App Store Links (Optional) */}
+         <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 space-x-0 md:space-x-4 md:order-3 p-4 bg-black-800 rounded-lg">
      <div className="flex space-x-4">
     <Link href="https://play.google.com/store" target="_blank">
     <button type="button" class="flex items-center justify-center w-48 text-white  border-black bg-gray rounded-lg h-14">
@@ -67,11 +67,9 @@ const Footer = () => {
     </Link>
   </div>
 </div>
-
-
-{/* Feature: Contact Us */}
+        {/* Feature: Contact Us */}
         <div className="flex flex-col items-start mb-6 md:mb-0">
-          <h3 className="mb-2 text-lg font-semibold">Contact Us</h3>
+          <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
           <div className="flex flex-col space-y-2">
             {/* Email Contact */}
             <a href="mailto:contact@yourdomain.com" className="text-sm font-semibold hover:underline">
@@ -90,26 +88,20 @@ const Footer = () => {
 
         {/* Right Section: Social Media Links */}
         <div className="flex space-x-6 md:order-2">
-  
-       
           <Link href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter" className="text-gray-400 hover:text-blue-400 transition">
-          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21.72,0H2.28A2.28,2.28,0,0,0,0,2.28V21.72A2.28,2.28,0,0,0,2.28,24H21.72A2.28,2.28,0,0,0,24,21.72V2.28A2.28,2.28,0,0,0,21.72,0Zm-4.73,17.09h-1.87l-2.89-4.46-2.91,4.46H7.46L11,12,7.69,6.91h1.88l2.6,4.14L14.79,6.91h1.89L13.5,12Z" />
-         </svg>
-
-
+            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              {/* Add Twitter SVG Path */}
+            </svg>
           </Link>
           <Link href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn" className="text-gray-400 hover:text-blue-600 transition">
-          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11.5 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75c.966 0 1.75.783 1.75 1.75s-.784 1.75-1.75 1.75zm13.268 12.268h-3v-5.604c0-1.337-.026-3.065-1.866-3.065-1.868 0-2.154 1.462-2.154 2.971v5.698h-3v-11h2.882v1.501h.041c.401-.757 1.379-1.554 2.84-1.554 3.039 0 3.6 2 3.6 4.599v6.454z"/>
-          </svg>
-
+            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              {/* Add LinkedIn SVG Path */}
+            </svg>
           </Link>
           <Link href="https://github.com/yourprofile" target="_blank" aria-label="GitHub" className="text-gray-400 hover:text-blue-600 transition">
-          <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.803 8.207 11.385.6.111.793-.261.793-.577 0-.287-.011-1.046-.016-2.057-3.338.727-4.04-1.611-4.04-1.611-.546-1.387-1.333-1.757-1.333-1.757-1.088-.743.083-.728.083-.728 1.204.085 1.838 1.238 1.838 1.238 1.07 1.826 2.805 1.299 3.49.996.108-.776.419-1.299.763-1.599-2.666-.301-5.467-1.333-5.467-5.93 0-1.311.467-2.381 1.236-3.219-.124-.303-.536-1.522.117-3.166 0 0 1.007-.322 3.301 1.239 1.023-.284 2.115-.426 3.198-.429 1.082.003 2.173.145 3.196.429 2.295-1.561 3.302-1.239 3.302-1.239.655 1.644.242 2.863.118 3.166.77.838 1.236 1.908 1.236 3.219 0 4.608-2.805 5.626-5.471 5.926.433.372.823 1.104.823 2.226 0 1.609-.012 2.895-.012 3.279 0 .317.189.692.798.574 4.765-1.582 8.207-6.082 8.207-11.385 0-6.627-5.373-12-12-12z"/>
-         </svg>
-
+            <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              {/* Add GitHub SVG Path */}
+            </svg>
           </Link>
         </div>
       </div>
@@ -118,7 +110,6 @@ const Footer = () => {
       <div className="text-center mt-10">
         <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
       </div>
-      
     </footer>
   )
 }
