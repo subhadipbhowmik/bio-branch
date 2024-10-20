@@ -26,10 +26,24 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+body.dark {
+  color: rgb(var(--foreground-dark-rgb)); /* Adjust foreground color for dark mode */
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-dark-rgb))
+    )
+    rgb(var(--background-start-dark-rgb));
+}
+
 a {
   font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
   color: inherit;
   text-decoration: none;
+}
+
+a.dark {
+  color: rgb(var(--link-dark-rgb)); /* Dark mode link color */
 }
 
 ::-webkit-scrollbar {
@@ -49,14 +63,17 @@ a {
   background: #757575; /* Set color of thumb on hover */
 }
 
-img{
+img {
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-} */
 
+  body {
+    background-color: rgb(var(--background-dark)); /* Background for dark mode */
+  }
+}

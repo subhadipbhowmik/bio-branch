@@ -1,10 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Enable dark mode based on a class
   theme: {
     extend: {},
   },
@@ -16,4 +16,4 @@ module.exports = {
     'bg-yellow-500',
     'bg-purple-500',
   ],
-}
+};
