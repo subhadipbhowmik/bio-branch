@@ -4,9 +4,9 @@ import { Camera, Heart, Home, User, Link, Edit } from 'lucide-react'
 const DetailsCard = () => {
   return (
     <section className="py-12">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-4">Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container md:w-[80%] mx-auto">
+        <h2 className="text-3xl font-semibold text-center mb-8">Features</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           
           {/* Card 1 */}
           <div className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg p-6 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default" style={{ boxShadow: '0 10px 20px rgba(79, 70, 229, 0.6)' }}>
