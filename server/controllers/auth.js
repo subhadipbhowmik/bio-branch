@@ -41,11 +41,19 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = await UserModel.findOne({ email: email, password: password });
+        const user = await UserModel.findOne({ email: email });
         if (!user) {
             return res.status(404).json({
                 status: 'notfound',
                 error: 'No user found'
+            });
+        }
+        //since the Passwored is hashed  we need to validate the hashed paswword ...
+        const validatePassword = user.checkPassword(password) ;
+        if (!validatePassword) {
+            return res.status(401).json({
+                message: 'Invalid credentials',
+                status: 'error'
             });
         }
 
