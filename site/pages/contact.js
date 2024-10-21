@@ -37,7 +37,7 @@ const Contact = () => {
       </h2>
       <div className="flex flex-wrap justify-center gap-6"> {/* Center the boxes with gap */}
         {/* Request a Call Box */}
-        <div className={`${styles.box} w-1/3 p-4`}>
+        <div className={`${styles.box} w-[90%] p-4 lg:w-1/3 text-center `}>
           <h3 className="font-semibold text-xl mb-4">Request a Call</h3>
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
