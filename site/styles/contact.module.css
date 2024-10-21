@@ -1,5 +1,5 @@
 .box {
-    background-color: #e6f7ff; /* Lightish blue background */
+    background-color: grey-1000; /* Lightish blue background */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
