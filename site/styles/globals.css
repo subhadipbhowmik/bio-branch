@@ -60,3 +60,37 @@ img{
   }
 } */
 
+.logo-animate {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  border: 2px solid transparent; /* Add a border to animate */
+  border-radius: 50%; /* Makes the logo look sleek */
+}
+
+.logo-container:hover .logo-animate {
+  transform: scale(1.15) rotate(10deg); /* Smooth scaling and slight rotation */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
+  border-color: rgba(0, 150, 255, 0.8); /* Adds a glowing border */
+}
+
+.text-animate {
+  transition: transform 0.5s ease, color 0.5s ease;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.logo-container:hover .text-animate {
+  transform: scale(1.1) translateY(-5px);
+  color: #4CAF50; /* Change text color on hover (customize as needed) */
+}
+
+/* Fade-in animation when the text first appears */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+ 
