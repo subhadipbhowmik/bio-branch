@@ -4,6 +4,7 @@ import Creators from '@/components/Creators'
 import DetailsCard from '@/components/DetailsCard'
 import Faq from '@/components/Faq'
 import Process from '@/components/Process'
+import Description from '@/components/Description'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       />
 
       <main className="w-full min-h-screen flex flex-col justify-center items-center">
+        <Description/>
         <Creators/>
         <DetailsCard/>
         <Faq/>
