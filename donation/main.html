@@ -267,6 +267,86 @@
 
             alert("Donation Submitted:\n\n" + donationMessage);
         }
+        // JavaScript to handle the donation process
+function donateNow() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const coverTransaction = document.getElementById('coverTransaction').checked;
+    const frequency = document.getElementById('giftFrequency').checked ? 'Monthly' : 'One-Time';
+
+    // Regular expression for validating email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const gmailPattern = /^[^\s@]+@gmail\.com$/; // Pattern for specific Gmail address
+
+    if (!name || !email || selectedAmount === 0) {
+        alert("Please fill out all fields and select an amount.");
+        return;
+    }
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (!gmailPattern.test(email)) {
+        alert("Please enter a Gmail address (e.g., example@gmail.com).");
+        return;
+    }
+
+    let donationMessage = `Name: ${name}\nEmail: ${email}\nDonation Frequency: ${frequency}\nAmount: ₹${selectedAmount}`;
+    if (coverTransaction) {
+        donationMessage += "\nYou opted to cover ₹50 for transaction fees.";
+    }
+
+    alert("Donation Submitted:\n\n" + donationMessage);
+}
+// JavaScript to handle the donation process
+function donateNow() {
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const coverTransaction = document.getElementById('coverTransaction').checked;
+    const frequency = document.getElementById('giftFrequency').checked ? 'Monthly' : 'One-Time';
+
+    const name = nameField.value;
+    const email = emailField.value;
+
+    // Regular expression for validating email format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const gmailPattern = /^[^\s@]+@gmail\.com$/; // Pattern for specific Gmail address
+
+    if (!name || !email || selectedAmount === 0) {
+        alert("Please fill out all fields and select an amount.");
+        return;
+    }
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (!gmailPattern.test(email)) {
+        alert("Please enter a Gmail address (e.g., example@gmail.com).");
+        return;
+    }
+
+    let donationMessage = `Name: ${name}\nEmail: ${email}\nDonation Frequency: ${frequency}\nAmount: ₹${selectedAmount}`;
+    if (coverTransaction) {
+        donationMessage += "\nYou opted to cover ₹50 for transaction fees.";
+    }
+
+    alert("Donation Submitted:\n\n" + donationMessage);
+
+    // Reset the form fields
+    nameField.value = '';
+    emailField.value = '';
+    document.getElementById('coverTransaction').checked = false;
+    selectedAmount = 0; // Reset selected amount
+    document.querySelectorAll('.amount-buttons button').forEach(button => {
+        button.classList.remove('selected'); // Optionally, remove selection from buttons
+    });
+}
+
+
     </script>
 
 </body>
