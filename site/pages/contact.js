@@ -37,7 +37,7 @@ const Contact = () => {
       </h2>
       <div className="flex flex-wrap justify-center gap-6"> {/* Center the boxes with gap */}
         {/* Request a Call Box */}
-        <div className={`${styles.box} w-[90%] p-4 lg:w-1/3 text-center `}>
+        <div className={`${styles.box} w-full sm:w-2/3 lg:w-1/3 p-4 text-center`}> {/* Modified width */}
           <h3 className="font-semibold text-xl mb-4">Request a Call</h3>
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
@@ -92,9 +92,9 @@ const Contact = () => {
             </button>
           </form>
         </div>
-
+  
         {/* Support and Feedback Box */}
-        <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col gap-4">
+        <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col gap-4"> {/* Same width for mobile */}
           <div className={`${styles.box} p-7 mb-5`}>
             <h3 className="font-semibold text-xl mb-4">Support</h3>
             <p>Phone: (123) 456-7890</p>
@@ -119,7 +119,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  );
+  );  
 };
 
 export default Contact;
