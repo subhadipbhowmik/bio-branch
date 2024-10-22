@@ -1,0 +1,30 @@
+/* styles.css */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+  
+.scroll-btn {
+    /* background-color: #007bff; */
+    background-color: #723aeb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
+}
+  
+.scroll-btn:hover {
+    opacity: 1;
+}
+  
+.scroll-btn:focus {
+    outline: none;
+}
+  
