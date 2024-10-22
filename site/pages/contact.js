@@ -104,6 +104,7 @@ const Contact = () => {
           <h3 className="font-semibold text-xl mb-4 text-center">Feedback</h3>
           <p className="text-center mb-4">Your feedback is important to us! Please let us know your thoughts.</p>
           <form onSubmit={handleFeedbackSubmit} className="flex flex-col gap-4">
+
             <textarea
               placeholder="Your feedback here..."
               value={feedback}
