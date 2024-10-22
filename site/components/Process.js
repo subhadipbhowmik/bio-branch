@@ -1,82 +1,98 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { User, Edit, Share, CheckCircle } from 'lucide-react';
 
-// Keyframes for different icon animations
-const keyframes = `
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes scaleUp {
-  from { transform: scale(0.9); }
-  to { transform: scale(1); }
-}
-@keyframes rotateIn {
-  from { transform: rotate(-20deg); opacity: 0; }
-  to { transform: rotate(0); opacity: 1; }
-}
-@keyframes bounceIn {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-`;
+const TimelineEvent = ({ icon: Icon, title, description, index, isVisible }) => {
+  const isEven = index % 2 === 0;
+  const animations = ['animate-fadeIn', 'animate-scaleUp', 'animate-rotateIn', 'animate-bounceIn'];
+  const animationClass = animations[index % animations.length];
+  const gradients = [
+    'from-blue-500 to-indigo-500',
+    'from-pink-500 to-red-500',
+    'from-green-500 to-teal-500',
+    'from-yellow-500 to-orange-500'
+  ];
+  const gradientClass = gradients[index % gradients.length];
 
-const Process = () => {
   return (
-    <div className="bg-gray-100 py-16">
-      <style>{keyframes}</style> {/* Add keyframes here */}
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">How to Join BioTree</h2>
-        <div className="relative">
-          {/* Connector Lines */}
-          <div className="absolute inset-0 flex items-center justify-between">
-            <div className="w-1/4 border-t-2 border-gray-300"></div>
-            <div className="w-1/4 border-t-2 border-gray-300"></div>
-            <div className="w-1/4 border-t-2 border-gray-300"></div>
-            <div className="w-1/4 border-t-2 border-gray-300"></div>
-          </div>
-          {/* Process Steps */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-            {/* Step 1 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
-                <User className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-fadeIn" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Sign Up</h3>
-                <p className="text-gray-600 dark:text-gray-200">Create an account by providing your email address and creating a password.</p>
-              </div>
-            </div>
+    <div className={`mb-8 flex flex-col md:flex-row md:justify-between items-center w-full ${isEven ? 'md:flex-row-reverse' : ''}`}>
+      <div className="order-1 w-full md:w-5/12"></div>
+      <div
+        className={`z-20 flex items-center order-1 bg-gradient-to-r ${gradientClass} shadow-xl w-8 h-8 md:w-12 md:h-12 rounded-full ${
+          isVisible ? 'animate-bounce' : 'opacity-0'
+        } transition-all duration-1000 ease-in-out`}
+      >
+        <Icon className={`w-4 h-4 md:w-6 md:h-6 text-white mx-auto ${isVisible ? animationClass : 'opacity-0'}`} />
+      </div>
+      <div className={`order-1 bg-gray-200 dark:bg-gradient-to-r ${gradientClass} rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 md:px-8 md:py-4 mt-4 md:mt-0 transition-all duration-1000 ease-in-out ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}>
+        <h3 className="mb-3 font-bold text-white text-xl md:text-2xl">{title}</h3>
+        <p className="text-sm md:text-m leading-snug tracking-wide text-white">{description}</p>
+      </div>
+    </div>
+  );
+};
 
-            {/* Step 2 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
-                <Edit className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-scaleUp" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Customize Your Profile</h3>
-                <p className="text-gray-600 dark:text-gray-200">Add your social media links and customize your profile's appearance.</p>
-              </div>
-            </div>
+const Timeline = () => {
+  const [visibleEvents, setVisibleEvents] = useState([]);
 
-            {/* Step 3 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
-                <Share className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-rotateIn" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Publish Your BioTree</h3>
-                <p className="text-gray-600 dark:text-gray-200">Once you're happy with your profile, publish it and start sharing your links.</p>
-              </div>
-            </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      const events = document.querySelectorAll('.timeline-event');
+      const newVisibleEvents = [];
+      events.forEach((event, index) => {
+        const rect = event.getBoundingClientRect();
+        const isVisible = rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0;
+        if (isVisible) {
+          newVisibleEvents.push(index);
+        }
+      });
+      setVisibleEvents(newVisibleEvents);
+    };
 
-            {/* Step 4 */}
-            <div className="flex flex-col items-center">
-              <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full max-w-xs relative z-10 border border-gray-300 transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-slate-900">
-                <CheckCircle className="w-12 h-12 text-gray-600 dark:text-gray-300 mx-auto mb-4 animate-bounceIn" />
-                <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-100">Final Review</h3>
-                <p className="text-gray-600 dark:text-gray-200">Review your profile and make any necessary adjustments before finalizing.</p>
-              </div>
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check visibility on initial render
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const events = [
+    {
+      icon: User,
+      title: 'Sign Up',
+      description: 'Create an account by providing your email address and creating a password.',
+    },
+    {
+      icon: Edit,
+      title: 'Customize Your Profile',
+      description: 'Add your social media links and customize your profile\'s appearance.',
+    },
+    {
+      icon: Share,
+      title: 'Publish Your BioTree',
+      description: 'Once you\'re happy with your profile, publish it and start sharing your links.',
+    },
+    {
+      icon: CheckCircle,
+      title: 'Final Review',
+      description: 'Review your profile and make any necessary adjustments before finalizing.',
+    }
+  ];
+
+  return (
+    <div className="bg-gray-100 dark:bg-white py-16 md:py-32">
+      <div className="container mx-auto w-full h-full px-4 md:px-0">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-800 dark:text-gray-900">How to Join BioTree</h2>
+        <div className="relative wrap overflow-hidden p-4 md:p-10 h-full">
+          <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border hidden md:block" style={{ left: '50%' }}></div>
+          {events.map((event, index) => (
+            <div key={index} className="timeline-event">
+              <TimelineEvent {...event} index={index} isVisible={visibleEvents.includes(index)} />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default Process;
+export default Timeline;
