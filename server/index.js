@@ -12,6 +12,7 @@ const { saveSocials, saveProfile } = require('./controllers/saveSocials');
 const { loadSocials } = require('./controllers/loadSocials');
 const { loadLinks } = require('./controllers/loadLinks');
 const { saveLinks } = require('./controllers/saveLinks');
+const { verifyJWT } = require('./middlewares/auth.middleware');
 
 const app = express();
 
@@ -80,7 +81,7 @@ app.get('/auth/google/callback',
 );
 
 // Add a logout route
-app.get('/logout', (req, res) => {
+app.get('/logout', verifyJWT,(req, res) => {
     req.logout(() => {
         res.redirect('/');
     });
