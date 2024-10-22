@@ -67,12 +67,12 @@ const Faq = () => {
             </div>
             <div
               className={`overflow-hidden transition-all duration-700 ease-in-out 
-                ${activeIndex === index ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'}`}
+                ${activeIndex === index ? 'max-h-[200px] opacity-100 ml-3' : 'max-h-0 opacity-0'}`}
               style={{ height: activeIndex === index ? 'auto' : '0px' }}
             >
               <p className="text-gray-600 leading-relaxed transition-opacity duration-500">{faq.answer}</p>
             </div>
-            <span className="text-sm text-gray-500 mt-2">{activeIndex === index ? 'Hide' : 'Show'} Answer</span>
+            <span className="text-sm text-gray-500 mt-2 ml-2">{activeIndex === index ? 'Hide' : 'Show'} Answer</span>
           </div>
         ))}
       </div>
