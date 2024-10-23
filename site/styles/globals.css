@@ -54,6 +54,18 @@ img{
   -webkit-user-drag: none;
 }
 
+nav{
+  position:fixed; /*making topnav bar fixed*/
+  top:0;
+  width:100%;
+  z-index: 1000; /* Make sure it stays above other elements */
+}
+
+/*adding space between topnavbar and creator list section*/
+.py-12{
+  margin-top:130px;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
