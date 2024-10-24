@@ -17,7 +17,8 @@
     "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-toastify": "^9.1.2"
+    "react-toastify": "^9.1.2",
+    "site": "file:"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

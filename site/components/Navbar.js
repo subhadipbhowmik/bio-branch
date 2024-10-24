@@ -40,10 +40,10 @@ const NavBar = () => {
                     <Link href="/" className={`w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 block py-2 pl-3 pr-4 ${currentRoute === '/' ? 'text-red-500' : 'text-green-500 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default'}`}>Home</Link>
                 </li>
                 <li>
-                    <Link href="/apply" className={`block py-2 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 pl-3 pr-4 ${currentRoute === '/apply' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out text-green-500 cursor-default dark:text-white'}`}>Apply</Link>
+                    <Link href="/apply" className={`block cursor-pointer py-2 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 pl-3 pr-4 ${currentRoute === '/apply' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out text-green-500 cursor-default dark:text-white'}`}>Apply</Link>
                 </li>
                 <li>
-                    <Link href="/login" className={`block py-2 pl-3 pr-4 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 ${currentRoute === '/login' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default text-green-500'}`}>Login</Link>
+                    <Link href="/login" className={`block cursor-pointer py-2 pl-3 pr-4 w-[70px] justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 ${currentRoute === '/login' ? 'text-red-500 bg-blue-700 md:bg-transparent dark:text-blue-500' : 'text-gray-900 transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default text-green-500'}`}>Login</Link>
                 </li>
                 {isLoggedIn && (
                     <li>
@@ -51,7 +51,7 @@ const NavBar = () => {
                     </li>
                 )}
                 <li>
-                    <Link href="/contact" className={`block py-2 pl-3 pr-4 ${currentRoute === '/contact' ? 'text-red-500 md:bg-transparent dark:text-blue-500' : 'w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500'}`}>Contact Us</Link>
+                    <Link href="/contact" className={`block cursor-pointer py-2 pl-3 pr-4 ${currentRoute === '/contact' ? 'text-red-500 md:bg-transparent dark:text-blue-500' : 'w-full transition-all transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out cursor-default justify-center text-center rounded-full hover:text-pink-400 hover:bg-green-400 text-green-500'}`}>Contact Us</Link>
                 </li>
             </ul>
             </div>
