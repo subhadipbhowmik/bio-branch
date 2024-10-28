@@ -1,9 +1,26 @@
 import React from 'react'
 import Link from 'next/link'
 import { Apple, Play } from 'lucide-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInstagram, faDiscord, faFacebook, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const Footer = () => {
+
+  const iconStyle = {
+    color: 'white',
+    transition: 'transform 0.2s, color 0.2s',
+    cursor: 'pointer',
+    fontSize: '2rem',
+  };
+  
+  const hoverStyle = {
+    color: '#f79c42', 
+    transform: 'scale(1.2)', 
+  };
+
   return (
+    
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
 
       {/* Wave Effect (You can add SVG wave here for a design touch) */}
@@ -21,6 +38,60 @@ const Footer = () => {
           <p className="text-sm text-gray-400 mt-2">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
         </div>
 
+
+        <div className="flex space-x-4">
+  <a
+    href="https://www.instagram.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={iconStyle}
+    onMouseOver={(e) => { e.currentTarget.style.color = hoverStyle.color; e.currentTarget.style.transform = hoverStyle.transform; }}
+    onMouseOut={(e) => { e.currentTarget.style.color = iconStyle.color; e.currentTarget.style.transform = 'scale(1)'; }}
+  >
+    <i className="fab fa-instagram"></i>
+  </a>
+  <a
+    href="https://www.discord.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={iconStyle}
+    onMouseOver={(e) => { e.currentTarget.style.color = hoverStyle.color; e.currentTarget.style.transform = hoverStyle.transform; }}
+    onMouseOut={(e) => { e.currentTarget.style.color = iconStyle.color; e.currentTarget.style.transform = 'scale(1)'; }}
+  >
+    <i className="fab fa-discord"></i>
+  </a>
+  <a
+    href="https://www.facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={iconStyle}
+    onMouseOver={(e) => { e.currentTarget.style.color = hoverStyle.color; e.currentTarget.style.transform = hoverStyle.transform; }}
+    onMouseOut={(e) => { e.currentTarget.style.color = iconStyle.color; e.currentTarget.style.transform = 'scale(1)'; }}
+  >
+    <i className="fab fa-facebook"></i>
+  </a>
+  <a
+    href="https://www.twitter.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={iconStyle}
+    onMouseOver={(e) => { e.currentTarget.style.color = hoverStyle.color; e.currentTarget.style.transform = hoverStyle.transform; }}
+    onMouseOut={(e) => { e.currentTarget.style.color = iconStyle.color; e.currentTarget.style.transform = 'scale(1)'; }}
+  >
+    <i className="fab fa-twitter"></i>
+  </a>
+  <a
+    href="https://www.whatsapp.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={iconStyle}
+    onMouseOver={(e) => { e.currentTarget.style.color = hoverStyle.color; e.currentTarget.style.transform = hoverStyle.transform; }}
+    onMouseOut={(e) => { e.currentTarget.style.color = iconStyle.color; e.currentTarget.style.transform = 'scale(1)'; }}
+  >
+    <i className="fab fa-whatsapp"></i>
+  </a>
+</div>
+
         {/* Right Section: Download the App */}
         <div className="flex space-x-4 md:order-3">
           <Link href="https://play.google.com/store" target="_blank">
@@ -37,6 +108,9 @@ const Footer = () => {
             </div>
           </Link>
         </div>
+
+
+
 
         {/* Feature: Contact Us */}
         <div className="flex flex-col items-start mb-6 md:mb-0">
@@ -85,4 +159,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;
