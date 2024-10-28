@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+=======
+    "@heroicons/react": "^2.1.5",
+>>>>>>> 53b6d387bbc0350739c6f6b87cef6690663dfd28
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^11.5.4",
