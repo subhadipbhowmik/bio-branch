@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Apple, Play } from 'lucide-react'
 
-const Footer = () => {
+const Footer = () => { 
   return (
     <footer aria-label="Site Footer" className="relative bg-gray-900 text-white py-10 px-6">
 
@@ -79,7 +79,7 @@ const Footer = () => {
 
       {/* Bottom Text */}
       <div className="text-center mt-10">
-        <p className="text-sm">&copy; 2024 Shubhadip Bhowmik. All rights reserved.</p>
+        <p className="text-sm">&copy; {new Date().getFullYear()} Shubhadip Bhowmik. All rights reserved.</p>
       </div>
     </footer>
   )
