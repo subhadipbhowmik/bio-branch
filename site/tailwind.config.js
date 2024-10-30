@@ -6,7 +6,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gray: {
+          900: 'rgb(7, 56, 65)', // Custom color for footer section
+        }
+      }
+    },
   },
   plugins: [],
   safelist: [
