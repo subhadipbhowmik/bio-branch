@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
 const Creators = () => {
   const avatarImages = [
@@ -14,7 +14,7 @@ const Creators = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center px-10 py-12 bg-gray-50 rounded-lg shadow-lg">
+    <div className="flex flex-col items-center px-10 py-8 bg-gray-50 rounded-lg shadow-lg mt-9">
       {/* Title */}
       <h1 className="mb-6 text-center font-extrabold text-3xl text-gray-800 leading-tight">
         Join Thousands of Inspiring Creators
@@ -34,12 +34,12 @@ const Creators = () => {
 
       {/* CTA Button */}
       <Link href="/apply">
-      <button className="bg-indigo-600 text-white hover:bg-indigo-500 hover:scale-105 transition-all duration-300 px-8 py-3 rounded-full font-semibold shadow-md">
-        Explore the Most Creative BioTrees
-      </button>
+        <button className="bg-indigo-600 text-white hover:bg-indigo-500 hover:scale-105 transition-all duration-300 px-8 py-3 rounded-full font-semibold shadow-md">
+          Explore the Most Creative BioTrees
+        </button>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Creators
+export default Creators;
