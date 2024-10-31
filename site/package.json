@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^11.5.4",

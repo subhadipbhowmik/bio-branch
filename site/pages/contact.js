@@ -32,7 +32,7 @@ const Contact = () => {
 
   return (
     <div className="bg-white min-h-screen p-6">
-      <h2 className="text-2xl font-bold text-center mb-6">
+      <h2 className="text-3xl font-bold text-center mb-6">
         How would you like to contact Bio-branch?
       </h2>
       {/* Request a Call Box */}
@@ -104,7 +104,6 @@ const Contact = () => {
           <h3 className="font-semibold text-xl mb-4 text-center">Feedback</h3>
           <p className="text-center mb-4">Your feedback is important to us! Please let us know your thoughts.</p>
           <form onSubmit={handleFeedbackSubmit} className="flex flex-col gap-4">
-
             <textarea
               placeholder="Your feedback here..."
               value={feedback}
@@ -112,10 +111,35 @@ const Contact = () => {
               className="border rounded p-3 text-black"
               required
             />
-            <button type="submit" className="bg-red-500 text-white p-3 rounded hover:bg-red-600">
-              Submit Feedback
+            <button type="submit" className="bg-blue-500 text-white p-2 rounded transition duration-800 ease-in-out hover:font-bold hover:text-[#e0ff4f]">
+              Submit
             </button>
           </form>
+        </div>
+
+        {/* Support and Feedback Box */}
+        <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col gap-4">
+          <div className={`${styles.box} p-7 md:mb-5`}>
+            <h3 className="font-bold text-xl mb-4 text-[#15616d]">Support</h3>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: support@bio-branch.com</p>
+          </div>
+          <div className={`${styles.box} p-7`}>
+            <h3 className="font-bold text-xl mb-2  text-[#15616d]">Feedback</h3>
+            <p className='mb-1 '>Your feedback is important to us! Please let us know your thoughts.</p>
+            <form onSubmit={handleFeedbackSubmit} className="flex flex-col">
+              <textarea
+                placeholder="Your feedback here..."
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
+                className="border rounded p-2 w-full"
+                required
+              />
+              <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-2 transition duration-800 ease-in-out hover:font-bold hover:text-[#e0ff4f]">
+                Submit Feedback
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
