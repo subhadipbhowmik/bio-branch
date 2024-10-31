@@ -24,7 +24,7 @@ const NavBar = () => {
 
     return (
     <>    
-        <nav className="bg-white border-gray-200 dark:bg-gray-900">
+        <nav className="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 w-full z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link href="/" className="flex items-center">
                 <img src="/images/favicon.ico" className="h-8 mr-3" alt="Company Logo" />
@@ -60,6 +60,10 @@ const NavBar = () => {
             </div>
         </div>
         </nav>
+        <main className="pt-8">
+                <div className="max-w-screen-xl mx-auto p-4">
+                </div>
+            </main>
     </>
     );
 }
