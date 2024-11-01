@@ -1,9 +1,11 @@
 import "../styles/globals.css";
 import "../styles/Preloader.css";
+import "../styles/scrollToTopButton.css";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 import NProgress from 'nprogress';
 import '../public/nprogress.css';
 import { ToastContainer } from 'react-toastify';
@@ -151,5 +153,5 @@ export default function App({ Component, pageProps }) {
         </button>
       )}
     </>
-  )
+  );
 }

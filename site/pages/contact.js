@@ -32,13 +32,12 @@ const Contact = () => {
 
   return (
     <div className="bg-white min-h-screen p-6">
-      <h2 className="text-2xl font-bold text-center mb-6">
+      <h2 className="text-3xl font-bold text-center mb-6">
         How would you like to contact Bio-branch?
       </h2>
       <div className="flex flex-wrap justify-center gap-6"> {/* Center the boxes with gap */}
         {/* Request a Call Box */}
-        <div className={`${styles.box} w-[90%] p-4 lg:w-1/3 text-center `}>
-          <h3 className="font-semibold text-xl mb-4">Request a Call</h3>
+
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
               type="text"
@@ -87,7 +86,7 @@ const Contact = () => {
               className="border rounded p-2"
               required
             />
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+            <button type="submit" className="bg-blue-500 text-white p-2 rounded transition duration-800 ease-in-out hover:font-bold hover:text-[#e0ff4f]">
               Submit
             </button>
           </form>
@@ -95,14 +94,14 @@ const Contact = () => {
 
         {/* Support and Feedback Box */}
         <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col gap-4">
-          <div className={`${styles.box} p-7 mb-5`}>
-            <h3 className="font-semibold text-xl mb-4">Support</h3>
+          <div className={`${styles.box} p-7 md:mb-5`}>
+            <h3 className="font-bold text-xl mb-4 text-[#15616d]">Support</h3>
             <p>Phone: (123) 456-7890</p>
             <p>Email: support@bio-branch.com</p>
           </div>
           <div className={`${styles.box} p-7`}>
-            <h3 className="font-semibold text-xl mb-2">Feedback</h3>
-            <p>Your feedback is important to us! Please let us know your thoughts.</p>
+            <h3 className="font-bold text-xl mb-2  text-[#15616d]">Feedback</h3>
+            <p className='mb-1 '>Your feedback is important to us! Please let us know your thoughts.</p>
             <form onSubmit={handleFeedbackSubmit} className="flex flex-col">
               <textarea
                 placeholder="Your feedback here..."
@@ -111,7 +110,7 @@ const Contact = () => {
                 className="border rounded p-2 w-full"
                 required
               />
-              <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-2">
+              <button type="submit" className="bg-blue-500 text-white p-2 rounded mt-2 transition duration-800 ease-in-out hover:font-bold hover:text-[#e0ff4f]">
                 Submit Feedback
               </button>
             </form>
