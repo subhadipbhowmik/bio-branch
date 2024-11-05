@@ -31,10 +31,20 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen p-6">
+
+    <div className="bg-white min-h-screen p-6 mt-20">
+    {/*  Added margin to adjust the layout, and this caused the entire contact page to shift downwards.
+     As a result, it no longer overlaps with the navbar and is positioned below it. */}
+    
       <h2 className="text-3xl font-bold text-center mb-6">
         How would you like to contact Bio-branch?
       </h2>
+      {/* <div className='contact-content flex justify-center gap-10'> */}
+
+      {/* The alignment issue might be resolved by placing both the contact and feedback forms within a single container div.
+      This change could help manage spacing and layout more effectively.
+      However, since this is not my assigned task, I’m leaving this as a suggestion for the appropriate team member. */}
+
       <div className="flex flex-wrap justify-center gap-6"> {/* Center the boxes with gap */}
         {/* Request a Call Box */}
 
@@ -116,8 +126,9 @@ const Contact = () => {
             </form>
           </div>
         </div>
-      </div>
+        {/* </div> contact content div  */}
     </div>
+
   );
 };
 
