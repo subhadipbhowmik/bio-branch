@@ -72,3 +72,13 @@ nav{
   }
 } */
 
+/* globals.css */
+
+
+.bg-gray-900 {
+  background-color: #1a202c; /* Dark background color */
+}
+
+.text-white {
+  color: white; /* White text for dark mode */
+}
