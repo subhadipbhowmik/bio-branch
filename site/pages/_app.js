@@ -1,7 +1,7 @@
+import { useState, useEffect } from 'react';
 import "../styles/globals.css";
 import "../styles/Preloader.css";
 import "../styles/scrollToTopButton.css";
-import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   // Create a blank state object
+  const [darkMode, setDarkMode] = useState(false); // Dark mode state
   const [userData, setUserData] = useState({
     name: '',
     role: '',
@@ -28,8 +29,20 @@ export default function App({ Component, pageProps }) {
     bio: '',
   });
 
-  // State to control the visibility of the scroll button
   const [showButton, setShowButton] = useState(false);
+  const router = useRouter();
+
+  // Load the dark mode preference from localStorage
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(savedMode); // Apply the saved mode
+  }, []);
+
+  // Toggle the dark mode
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem('darkMode', !darkMode); // Save preference to localStorage
+  };
 
   useEffect(() => {
     const handleStart = () => {
@@ -104,14 +117,13 @@ export default function App({ Component, pageProps }) {
       )}
     </>
   );
-=======
   // Function to scroll to the top
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <>
+    <div className={darkMode ? 'dark' : ''}> {/* Apply dark mode class conditionally */}
       <NavBar />
       <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-WYTYXQXVK6`} />
       <Script strategy="lazyOnload">
@@ -125,7 +137,24 @@ export default function App({ Component, pageProps }) {
         `}
       </Script>
       <UserContext.Provider value={{ userData, setUserData }}>
-        <Component {...pageProps} />
+        <div className="min-h-screen bg-white dark:bg-gray-900"> {/* Background color changes based on dark mode */}
+          <header className="flex justify-between items-center p-4">
+            {/* Dark mode toggle button */}
+            <button
+              onClick={toggleDarkMode}
+              className="bg-gray-800 text-white p-2 rounded-full"
+              style={{
+                position: 'absolute',
+                top: '10px', // Adjust the position as needed
+                right: '10px',
+                zIndex: 1000, // Ensure it appears above other content
+              }}
+            >
+              {darkMode ? '🌙' : '🌞'}
+            </button>
+          </header>
+          <Component {...pageProps} />
+        </div>
       </UserContext.Provider>
       <ToastContainer />
       {isLoading && <div className="nprogress-custom-parent"><div className="nprogress-custom-bar" /></div>}
@@ -152,6 +181,6 @@ export default function App({ Component, pageProps }) {
           &#8593; {/* Up Arrow */}
         </button>
       )}
-    </>
+    </div>
   );
 }
