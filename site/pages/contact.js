@@ -92,12 +92,12 @@ const Contact = () => {
         {/* Support and Feedback Box */}
         <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col gap-4">
           <div className={`${styles.box} p-7 md:mb-5`}>
-            <h3 className="font-bold text-xl mb-4 text-[#15616d]">Support</h3>
+            <h3 className="font-semibold text-xl mb-4">Support</h3>
             <p>Phone: (123) 456-7890</p>
             <p>Email: support@bio-branch.com</p>
           </div>
           <div className={`${styles.box} p-7`}>
-            <h3 className="font-bold text-xl mb-2  text-[#15616d]">Feedback</h3>
+            <h3 className="font-semibold text-xl mb-4">Feedback</h3>
             <p className='mb-1 '>Your feedback is important to us! Please let us know your thoughts.</p>
             <form onSubmit={handleFeedbackSubmit} className="flex flex-col">
               <textarea
