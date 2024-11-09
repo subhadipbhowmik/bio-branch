@@ -40,6 +40,42 @@ const Faq = () => {
       <h2 className="text-4xl font-extrabold text-center mb-10 text-gray-800">Frequently Asked Questions</h2>
       <div className="space-y-8">
         {faqData.map((faq, index) => (
+ 
+          <div 
+            key={index} 
+            className={`faq-item-container bg-white rounded-lg shadow-lg p-6 flex transition-transform transform 
+            cursor-pointer hover:scale-105 hover:shadow-xl hover:bg-gray-50 duration-300 ease-in-out 
+            ${activeIndex === index ? 'bg-gray-100 border border-gray-300' : ''}`}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="flex items-start mb-2 space-x-4">
+              <div className="flex-shrink-0">
+                {/* Inline style for 360-degree rotation */}
+                <span
+                  style={{
+                    display: 'inline-block',
+                    transition: 'transform 0.3s ease-in-out',
+                    transform: activeIndex === index ? 'rotate(360deg)' : 'rotate(0deg)',
+                  }}
+                >
+                  {faq.icon}
+                </span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-800">{faq.question}</h3>
+              </div>
+            </div>
+            <div
+              className={`overflow-hidden transition-all duration-700 ease-in-out 
+                ${activeIndex === index ? 'max-h-[200px] opacity-100 ml-3' : 'max-h-0 opacity-0'}`}
+              style={{ height: activeIndex === index ? 'auto' : '0px' }}
+            >
+              <p className="text-gray-600 leading-relaxed transition-opacity duration-500">{faq.answer}</p>
+            </div>
+            <span className="text-sm text-gray-500 mt-2 ml-2">{activeIndex === index ? 'Hide' : 'Show'} Answer</span>
+          </div>
+ 
           <div
   key={index}
   className={`faq-item-container bg-white rounded-lg shadow-lg p-6 transition-transform transform
@@ -75,6 +111,7 @@ const Faq = () => {
     <p className="text-gray-600 leading-relaxed transition-opacity duration-500 ml-12">{faq.answer}</p>
   </div>
 </div>
+ 
         ))}
       </div>
     </div>
