@@ -82,3 +82,11 @@ nav{
 .text-white {
   color: white; /* White text for dark mode */
 }
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(133 60 59 / var(--tw-bg-opacity));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 243 226 / var(--tw-bg-opacity));
+}
