@@ -54,12 +54,25 @@ img{
   -webkit-user-drag: none;
 }
 
+nav{
+  position:fixed; /*making topnav bar fixed*/
+  top:0;
+  width:100%;
+  z-index: 1000; /* Make sure it stays above other elements */
+}
+
+/*adding space between topnavbar and creator list section*/
+.py-12{
+  margin-top:130px;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 } */
 
+ 
 .logo-animate {
   transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
   border: 2px solid transparent; /* Add a border to animate */
@@ -92,5 +105,17 @@ img{
       opacity: 1;
       transform: translateY(0);
   }
+}
+ 
+ 
+/* globals.css */
+
+
+.bg-gray-900 {
+  background-color: #1a202c; /* Dark background color */
+}
+
+.text-white {
+  color: white; /* White text for dark mode */
 }
  
