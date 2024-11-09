@@ -32,12 +32,9 @@ const Contact = () => {
 
   return (
     <div className="bg-white min-h-screen p-6">
-      <h2 className="text-3xl font-bold text-center mb-6">
-        How would you like to contact Bio-branch?
-      </h2>
       <div className="flex flex-wrap justify-center gap-6"> {/* Center the boxes with gap */}
         {/* Request a Call Box */}
-
+        <div class="contact_box__fM0JM w-[90%] p-4 lg:w-1/3 text-center "><h3 class="font-semibold text-xl mb-4">Request a Call</h3>
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
               type="text"
