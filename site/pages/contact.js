@@ -32,12 +32,9 @@ const Contact = () => {
 
   return (
     <div className="bg-white min-h-screen p-6">
-      <h2 className="text-3xl font-bold text-center mb-6">
-        How would you like to contact Bio-branch?
-      </h2>
       <div className="flex flex-wrap justify-center gap-6"> {/* Center the boxes with gap */}
         {/* Request a Call Box */}
-
+        <div class="contact_box__fM0JM w-[90%] p-4 lg:w-1/3 text-center "><h3 class="font-semibold text-xl mb-4">Request a Call</h3>
           <form onSubmit={handleRequestCall} className="flex flex-col gap-4">
             <input
               type="text"
@@ -95,12 +92,12 @@ const Contact = () => {
         {/* Support and Feedback Box */}
         <div className="w-full sm:w-2/3 lg:w-1/3 flex flex-col gap-4">
           <div className={`${styles.box} p-7 md:mb-5`}>
-            <h3 className="font-bold text-xl mb-4 text-[#15616d]">Support</h3>
+            <h3 className="font-semibold text-xl mb-4">Support</h3>
             <p>Phone: (123) 456-7890</p>
             <p>Email: support@bio-branch.com</p>
           </div>
           <div className={`${styles.box} p-7`}>
-            <h3 className="font-bold text-xl mb-2  text-[#15616d]">Feedback</h3>
+            <h3 className="font-semibold text-xl mb-4">Feedback</h3>
             <p className='mb-1 '>Your feedback is important to us! Please let us know your thoughts.</p>
             <form onSubmit={handleFeedbackSubmit} className="flex flex-col">
               <textarea
