@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import "../styles/globals.css";
+import "../styles/Preloader.css";
 import "../styles/scrollToTopButton.css";
 import { useRouter } from 'next/router';
 import Footer from "../components/Footer";
@@ -11,9 +12,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from 'next/script';
 import UserContext from "@/context/userContext";
+import Preloader from "../components/Preloader"; // Import the Preloader component
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(false);
+  const [isPreloaderVisible, setIsPreloaderVisible] = useState(true); // State for preloader visibility
+  const router = useRouter();
+
+  // Create a blank state object
   const [darkMode, setDarkMode] = useState(false); // Dark mode state
   const [userData, setUserData] = useState({
     name: '',
@@ -42,10 +48,13 @@ export default function App({ Component, pageProps }) {
     const handleStart = () => {
       setIsLoading(true);
       NProgress.start();
+      setIsPreloaderVisible(true); // Show preloader on route change
     };
+
     const handleComplete = () => {
       setIsLoading(false);
       NProgress.done();
+      setIsPreloaderVisible(false); // Hide preloader when loading is complete
     };
 
     // Show or hide the button based on scroll position
@@ -72,6 +81,42 @@ export default function App({ Component, pageProps }) {
     };
   }, [router.events]);
 
+  useEffect(() => {
+    // Set a timeout to hide the preloader after 5 seconds
+    const timer = setTimeout(() => {
+      setIsPreloaderVisible(false); // Hide preloader after 5 seconds
+    }, 5000);
+
+    return () => clearTimeout(timer); // Cleanup the timer on unmount
+  }, []);
+
+  return (
+    <>
+      {isPreloaderVisible ? ( // Render preloader if visible
+        <Preloader />
+      ) : (
+        <>
+          <NavBar />
+          <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=G-WYTYXQXVK6`} />
+          <Script strategy="lazyOnload">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WYTYXQXVK6', {
+                page_path: window.location.pathname,
+              });
+            `}
+          </Script>
+          <UserContext.Provider value={{ userData, setUserData }}>
+            <Component {...pageProps} />
+          </UserContext.Provider>
+          <ToastContainer />
+          <Footer />
+        </>
+      )}
+    </>
+  );
   // Function to scroll to the top
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
