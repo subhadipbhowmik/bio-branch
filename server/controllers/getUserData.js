@@ -64,4 +64,4 @@ const getUserSocials = async(req, res)=>{
 }
 */
 
-module.exports = { getUserData };
+module.exports= {getUserData};
