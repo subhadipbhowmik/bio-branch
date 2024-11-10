@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Footer Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .footer {
+            background-color: #0b1120;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+        }
+        .footer .top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .footer .left, .footer .right {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        .footer .left {
+            display: flex;
+            align-items: center;
+        }
+        .footer .left img {
+            margin-right: 10px;
+        }
+        .footer .right a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 5px;
+            transition: color 0.3s;
+        }
+        .footer .right a:hover {
+            color: #1e90ff;
+        }
+        .footer .icons {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+        .footer .icons i {
+            font-size: 24px;
+            color: #ffffff;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+        .footer .icons i:hover {
+            color: #1e90ff;
+        }
+        .footer .social-media {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .footer .social-media i {
+            font-size: 20px;
+            color: #ffffff;
+            margin-right: 10px;
+            transition: color 0.3s;
+        }
+        .footer .social-media i:hover {
+            color: #1e90ff;
+        }
+        .footer .social-media span {
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+        .footer .social-media span:hover {
+            color: #1e90ff;
+        }
+        .footer .copyright {
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="footer">
+        <div class="top">
+            <div class="left">
+                <img alt="Biotree logo" height="50" src="biotree.ico" width="50"/>
+                <h2>Biotree</h2>
+            </div>
+            <div class="right">
+                <h3>Contact Us</h3>
+                <a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>
+                <a href="tel:+123456789">+1 234 567 89</a>
+                <a href="#">Contact Form</a>
+                <div class="social-media">
+                    <i class="fab fa-facebook-f"></i><span>@biotree</span>
+                    <i class="fab fa-twitter"></i><span>@biotree</span>
+                    <i class="fab fa-instagram"></i><span>@biotree</span>
+                    <i class="fab fa-linkedin-in"></i><span>@biotree</span>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="fas fa-play"></i>
+                <i class="fas fa-apple-alt"></i>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 Shubhadip Bhowmik. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
