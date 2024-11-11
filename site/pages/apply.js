@@ -1,121 +1,266 @@
-import React, { useState } from 'react';
-import styles from '../styles/apply.module.css';
-import { toast } from 'react-toastify';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { toast } from "react-toastify";
+import { User, Mail, Lock, Loader } from "lucide-react";
 
-const Apply = () => {
+export default function Component() {
   const router = useRouter();
-  const [handle, setHandle] = useState('');
-  const [category, setCategory] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [handle, setHandle] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [category, setCategory] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [errors, setErrors] = useState({
+    handle: "",
+    email: "",
+    password: "",
+    category: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = { handle: "", email: "", password: "", category: "" };
+
+    if (!handle) {
+      newErrors.handle = "Social handle is required";
+      isValid = false;
+    }
+
+    if (!email) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Email is invalid";
+      isValid = false;
+    }
+
+    if (!password) {
+      newErrors.password = "Password is required";
+      isValid = false;
+    } else if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+      isValid = false;
+    }
+
+    if (!category) {
+      newErrors.category = "Please select an account type";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    if (!category) {
-      toast.error('Please select a category');
-      return;
-    }
+    if (!validateForm()) return;
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ handle, email, password, category }),
-    };
+    setIsLoading(true);
 
     try {
-      const response = await fetch('https://bio-branch-server.onrender.com/api/register', options);
+      const response = await fetch(
+        "https://bio-branch-server.onrender.com/api/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ handle, email, password, category }),
+        }
+      );
+
       const data = await response.json();
 
-      if (data.status === 'success') {
-        toast.success('Registered successfully');
-        localStorage.setItem('BioTreeToken', data.token);
-        setSubmitted(true);
-        router.push('/login');
+      if (data.status === "success") {
+        toast.success("Registered successfully");
+        localStorage.setItem("BioTreeToken", data.token);
+        router.push("/login");
       } else {
-        toast.error('Try a different username');
+        toast.error("Try a different username");
       }
     } catch (error) {
-      toast.error('An error occurred. Please try again.');
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
+  const Images = [
+    "https://shubhadipbhowmik.vercel.app/_next/image/?url=%2Fmemories%2Fimage-17.jpg&w=640&q=75",
+    "https://shubhadipbhowmik.vercel.app/_next/image/?url=%2Fmemories%2Fimage-21.jpg&w=640&q=75",
+    "https://shubhadipbhowmik.vercel.app/_next/image/?url=%2Fmemories%2Fimage-26.jpg&w=640&q=75",
+  ];
+
   return (
-    <>
-      <section className={`${styles.background} min-h-screen flex justify-center items-center`}>
-        <div className="main">
-          <div className="content bg-white border-2 px-4 py-8 rounded-md shadow-lg">
-            <h1 className='text-center font-bold text-2xl'>Join the top 1% Creators</h1>
-            <p className='text-center mb-3'>Get access to exclusive content</p>
-            <form onSubmit={handleRegister} className='flex flex-col gap-3 text-lg' method='POST'>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <img className='w-6 mr-2' src="/svg/instagram.svg" alt="" />
-                <input
-                  className='focus:outline-none'
-                  placeholder='Social Handle'
-                  type="text"
-                  value={handle}
-                  onChange={(e) => setHandle(e.target.value)}
+    <div className="flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">
+      <div className="w-full md:m-16  max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+        <div className="md:w-1/2 bg-gradient-to-br from-blue-500 to-purple-600 p-12 text-white flex flex-col justify-between">
+          <div>
+            <h2 className="text-4xl font-bold mb-6">
+              Join the Top 1% Creators
+            </h2>
+            <p className="text-xl mb-8">
+              Get access to exclusive content and connect with inspiring
+              creators.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {Images.map((image, index) => (
+              <div key={index} className="flex items-center space-x-4">
+                <img
+                  key={index}
+                  className="w-16 h-16 rounded-full border-2 border-gray-200 hover:scale-105 transform transition-all duration-300"
+                  src={image}
+                  alt={`Creative ${index + 1}`}
                 />
-              </span>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <img className='w-6 mr-2' src="/svg/email.svg" alt="" />
-                <input
-                 className='focus:outline-none'
-                  placeholder='Add Email'
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </span>
-              <span className='flex items-center shadow-md border-2 px-3 py-2 rounded-md focus:outline-none'>
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 mr-2" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
-                  <path d="M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z"></path>
-                </svg>
-                <input
-                 className='focus:outline-none'
-                  placeholder='Add Password'
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </span>
-
-              <h5 className='text-center text-sm text-blue-600'>Account Type</h5>
-              <span className="flex justify-between">
-                <label htmlFor="" className='flex gap-2 cursor-pointer'>
-                  <input type="radio" value='Creator' checked={category === 'Creator'} onChange={handleCategoryChange} className='cursor-pointer'/>
-                  <p>Creator</p>
-                </label>
-                <label htmlFor="" className='flex gap-2 cursor-pointer'>
-                  <input type="radio" value='Agency' checked={category === 'Agency'} onChange={handleCategoryChange} className='cursor-pointer' />
-                  <p>Agency</p>
-                </label>
-                <label htmlFor="Brand" className='flex gap-2 cursor-pointer'>
-                  <input type="radio" value='Brand' checked={category === 'Brand'} onChange={handleCategoryChange} className='cursor-pointer'/>
-                  <p>Brand</p>
-                </label>
-              </span>
-
-              <input type='submit' value='Apply' className='bg-blue-500 text-white px-3 py-2 rounded-md' />
-            </form>
-
-            <h4 className='text-center pt-3'>Already Have Account? <span className='text-indigo-600'><Link href="/login">Login</Link></span></h4>
+                <div>
+                  <p className="font-semibold">Creator {index + 1}</p>
+                  <p className="text-sm opacity-75">Joined Biotree recently</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    </>
+        <div className="md:w-1/2 p-12">
+          <h3 className="text-3xl font-bold text-gray-800 mb-6">Sign Up</h3>
+          <form onSubmit={handleRegister} className="space-y-4">
+            <div>
+              <label
+                htmlFor="handle"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Social Handle
+              </label>
+              <div className="relative">
+                <User
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  size={20}
+                />
+                <input
+                  id="handle"
+                  type="text"
+                  placeholder="Your social handle"
+                  value={handle}
+                  onChange={(e) => setHandle(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+                />
+              </div>
+              {errors.handle && (
+                <p className="mt-1 text-sm text-red-600">{errors.handle}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Email
+              </label>
+              <div className="relative">
+                <Mail
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  size={20}
+                />
+                <input
+                  id="email"
+                  placeholder='Add Email'
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className=" focus:outline-none w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+                />
+              </div>
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+              )}
+            </div>
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Password
+              </label>
+              <div className="relative">
+                <Lock
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  size={20}
+                />
+                <input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-10 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+                >
+                  {showPassword ? <Lock size={20} /> : <Lock size={20} />}
+                </button>
+              </div>
+              {errors.password && (
+                <p className="mt-1 text-sm text-red-600">{errors.password}</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Account Type
+              </label>
+              <div className="flex justify-between space-x-4">
+                {["Creator", "Agency", "Brand"].map((type) => (
+                  <label
+                    key={type}
+                    className="flex items-center space-x-2 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      value={type}
+                      checked={category === type}
+                      onChange={(e) => setCategory(e.target.value)}
+                      className="form-radio text-blue-600 focus:ring-blue-500"
+                    />
+                    <span>{type}</span>
+                  </label>
+                ))}
+              </div>
+              {errors.category && (
+                <p className="mt-1 text-sm text-red-600">{errors.category}</p>
+              )}
+            </div>
+            <button
+              type="submit"
+              className={`w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-4 rounded-md hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105 ${
+                isLoading ? "opacity-75 cursor-not-allowed" : ""
+              }`}
+            >
+              {isLoading ? (
+                <span className="flex items-center justify-center">
+                  <Loader className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" />
+                  Signing Up...
+                </span>
+              ) : (
+                "Sign Up"
+              )}
+            </button>
+          </form>
+          <p className="mt-8 text-center text-sm text-gray-600">
+            Already have an account?{" "}
+            <Link
+              href="/login"
+              className="font-medium text-blue-600 hover:text-blue-500"
+            >
+              Log in here
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default Apply;
+}
