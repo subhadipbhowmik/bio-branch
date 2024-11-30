@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { model, Schema } = mongoose;
+const bcrypt = require('bcrypt'); //for hashing the password
 
 const UserSchema = new Schema({
     name: {
@@ -65,6 +66,23 @@ const UserSchema = new Schema({
         }
     }
 }, { collection: 'users' });
+
+//hashing the password before saving it to the database.
+
+UserSchema.pre("save",async function(next){
+    //if the password field is not modified .
+    if(!this.isModified('password')) return next () ;
+
+     //this will run  1.For the first time  2.When the paswword is updated  
+
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+})
+UserSchema.methods.checkPassword = async function(password){
+    return await bcrypt.compare(password, this.password);  //this.password is the password from the database.  this.password is the password from the request.
+}
+
+
 
 const UserModel = model('User', UserSchema);
 
